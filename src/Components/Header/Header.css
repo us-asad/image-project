@@ -167,32 +167,7 @@
   color: #ffffff;
 }
 
-.header__yt-modal, .header__yt-modal-bg {
-  position: fixed;
-  transition: all .3s;
-}
-
-.header__yt-modal {
-  z-index: 19001;
-  display: grid;
-  place-content: center;
-  width: max-content;
-  height: max-content;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.header__yt-modal iframe {
+.iframe-container iframe {
   border-radius: 10px;
-}
-
-.header__yt-modal-bg {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 19000;
 }
 

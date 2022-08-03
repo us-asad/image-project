@@ -1,0 +1,24 @@
+.modal, .modal-bg {
+  position: fixed;
+  transition: all .3s;
+}
+
+.modal {
+  z-index: 19001;
+  display: grid;
+  place-content: center;
+  width: max-content;
+  height: max-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 19000;
+}

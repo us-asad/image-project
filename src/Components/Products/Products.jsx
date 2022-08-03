@@ -30,7 +30,6 @@ const Products = () => {
         .then((res) => res.json())
         .then((data) => setData(data));
     } else {
-      // must change the url!!
       fetch(`http://93.189.40.27:2200/service_category/?format=json`)
         .then((res) => res.json())
         .then((data) => setData(data));
@@ -66,7 +65,7 @@ const Products = () => {
             {
               data && data.map((e, i) => (
                 <SwiperSlide key={i}>
-                  <Link to={`/productpage/${e.id}`} >
+                  <Link to={`/${getPrds ? "category" : "services"}/${e.id}`} >
                     <div className="splide-header">
                       <img src={e.image} alt="" className="splide-img" />
                     </div>

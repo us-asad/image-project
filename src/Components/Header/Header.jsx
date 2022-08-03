@@ -6,6 +6,7 @@ import ytbIcon from "../../Assets/Img/Shape.svg";
 import headerBg from "../../Assets/Img/bg1.png";
 import { useTranslation } from 'react-i18next';
 import { useState } from "react";
+import ModalWithBg from "../ModalWithBg/ModalWithBg";
 
 const Header = ({ change1, change2, change3 }) => {
   const [openYtModal, setOpenYtModal] = useState(false);
@@ -77,7 +78,7 @@ const Header = ({ change1, change2, change3 }) => {
           </div>
         </div>
       </div>
-      <div className={`header__yt-modal ${!openYtModal && "hide"}`}>
+      <ModalWithBg open={openYtModal} toggleOpen={toggleYtModal}>
         <div className="iframe-container">
           <iframe
             width="560"
@@ -89,11 +90,7 @@ const Header = ({ change1, change2, change3 }) => {
             allowFullScreen
           ></iframe>
         </div>
-      </div>
-      <div
-        className={`header__yt-modal-bg ${!openYtModal && "hide"}`}
-        onClick={() => toggleYtModal(!openYtModal)}
-      ></div>
+      </ModalWithBg>
     </header>
   )
 }

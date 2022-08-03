@@ -6,70 +6,42 @@ import plus from "../../Assets/Img/plus.png";
 import matras from "../../Assets/Img/matras.png";
 import { Link, useParams } from "react-router-dom";
 
-const Category = (props) => {
-  const [selected, setSelected] = useState(null);
-  const [questions, setQuestions] = useState([]);
+const Category = ({ categoryPage, className }) => {
+  const [categories, setCategories] = useState([]);
   const [data, setData] = useState([]);
   const params = useParams();
 
-  function toggler(i) {
-    if (selected === i) {
-      return setSelected(null);
-    }
-    setSelected(i);
-  }
-
   useEffect(() => {
-    fetch("https://api.alibaraka.com/api/questions/")
+    fetch(`http://93.189.40.27:2200/${categoryPage ? "categories" : "service_category"}/?format=json`)
       .then((res) => res.json())
-      .then((data) => setQuestions(data));
+      .then((data) => setCategories(data));
   }, []);
 
   useEffect(() => {
     fetch(`http://93.189.40.27:2200/products/?format=json`)
       .then(res => res.json())
       .then(data => {
-
-        setData(data);
+        console.log(data, params)
+        setData(data.filter(prd => prd.category == params.id));
       });
   }, []);
-console.log(params)
+
   return (
     <div className="category">
       <div className="container">
         <div className="category-blok">
           <div className="category-left">
             <div className="details">
-              {questions.length > 0 && (
-                <ul
-                  className={`faq_list ${props.className ? props.className : ""
-                    }`}
-                >
-                  {questions.map((faq, i) => (
-                    <li
-                      key={i}
-                      className="faq_list__item"
-                      onClick={() => toggler(i)}
-                    >
-                      <div className="text_wrap faq_list__item__question_wrapper">
-                        <h4 className="faq_header">{faq.question_en}</h4>
-
-                        <span
-                          className={`icon ${selected === i ? "closer" : "opener"
-                            }`}
-                        >
-                          +
-                        </span>
-                      </div>
-                      <div
-                        className={`text_wrap ${selected === i
-                            ? "faq_list__item__answer_wrapper show"
-                            : "faq_list__item__answer_wrapper"
-                          }`}
-                      >
-                        <p className="faq_text">{faq.answer_en}</p>
-                      </div>
-                    </li>
+              {categories.length > 0 && (
+                <ul className="faq_list">
+                  {categories.map(category => (
+                    <Link key={category.id} to={`/${categoryPage ? "category" : "services"}/${category.id}`}>
+                      <li className={`faq_list__item ${category.id == params.id ? "active" : null}`}>
+                        <div className="text_wrap faq_list__item__question_wrapper">
+                          <h4 className="faq_header">{category.name_en}</h4>
+                        </div>
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               )}
@@ -79,9 +51,10 @@ console.log(params)
             <h3 className="category-names">Бязь</h3>
             <div className="category-box">
               {data &&
-                data.map((e) => (
+                data.map((e, i) => (
                   <Link
-                    to={`/productaboutpage/${e.id}`}
+                    key={i}
+                    to={`/${categoryPage ? "product" : "service"}/${e.id}`}
                     className="category-card"
                   >
                     <div className="category-images">

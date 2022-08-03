@@ -1,56 +1,56 @@
-.form{
-    background: #5B8A8D;
-    padding: 50px 0;
+.form {
+  background: #5b8a8d;
+  padding: 50px 0;
 }
 
-.form-name{
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 48px;
-    color: #FEEBE2;
+.form-name {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: #feebe2;
 }
 
-.form-input{
-    border: 1px solid #FFFFFF;
-border-radius: 20px;
-width: 270px;
-height: 46px;
-padding: 5px 15px;
-background-color: transparent;
-margin: 0 35px 0 0;
-outline: none;
+.form-input {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  width: 270px;
+  height: 46px;
+  padding: 5px 15px;
+  background-color: transparent;
+  margin: 0 35px 0 0;
+  outline: none;
+  color: white
 }
 
-.form-input::placeholder{
-    font-family: 'PF BeauSans Pro';
-    font-style: normal;
-    font-weight: 200;
-    font-size: 12px;
-    line-height: 17px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    
+.form-input::placeholder {
+  font-family: "PF BeauSans Pro";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
-.form-btn{
-    background: #FFF5F1;
-    border-radius: 20px;
-    height: 48px;
-    width: 260px;
-    border: 2px solid #FFF5F1;
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 18px;
-    text-transform: uppercase;
-    color: #5B8A8D;
-    cursor: pointer;
-    margin: 0 25px 0 0;
+.form-btn {
+  background: #fff5f1;
+  border-radius: 20px;
+  height: 48px;
+  width: 260px;
+  border: 2px solid #fff5f1;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #5b8a8d;
+  cursor: pointer;
+  margin: 0 25px 0 0;
 }
 
-.form-list{
-    margin-top: 50px;
+.form-list {
+  margin-top: 50px;
 }

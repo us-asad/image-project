@@ -4,13 +4,14 @@ import Logo from "../../Assets/Img/Logo.png"
 import menuBtn from "../../Assets/Img/menu.png"
 import ReactAudioPlayer from "react-audio-player";
 import music from "../../Assets/Img/music.mp3"
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BurgerIcon from "./BurgerIcon";
 import Popup from "reactjs-popup";
 import Menu1 from "../Menu/Menu1";
 import toggle from '../../Assets/Img/toggles.png'
 import React from 'react';
 import Modal from 'react-modal';
+import { useTranslation } from "react-i18next";
 
 
 
@@ -28,6 +29,7 @@ const customStyles = {
 
 
 const Nav = () => {
+  const { t } = useTranslation();
 
   //Modal
 
@@ -47,9 +49,6 @@ const Nav = () => {
     setIsOpen(false);
   }
 
-
-
-
   let audio = useRef();
   const [content, setContent] = useState(false);
   const [changeimg, setchangeimg] = useState("/img/nav/volumeUp.svg");
@@ -63,10 +62,13 @@ const Nav = () => {
       setchangeimg("/img/nav/volumeMute.svg");
     }
   };
+
+
   const mute = () => {
     setchangeimg("/img/nav/volumeMute.svg") &&
       console.log(audio.current.audioEl.current);
   };
+
   window.onscroll = function () {
     if (content === true) {
       return "";
@@ -74,9 +76,11 @@ const Nav = () => {
       audio?.current?.audioEl?.current?.play();
     }
   };
+
   function start() {
     audio?.current?.audioEl?.current?.play();
   }
+
   const [volMusic, setvolMusic] = useState();
   const change = (e) => {
     setvolMusic(e.target.value / 100);
@@ -97,6 +101,12 @@ const Nav = () => {
     setActive(!isActive);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      start()
+    }, 10000);
+  }, []);
+
 
   return (
     <nav className="nav">
@@ -108,7 +118,7 @@ const Nav = () => {
           <ul className="nav-list">
             <li className="nav-item">
               <a href="#" className="nav-link">
-                Продукты
+              Продукты
               </a>
             </li>
             <li className="nav-item">
@@ -132,7 +142,7 @@ const Nav = () => {
           <div className="volume">
             <div className="upper" onClick={play}>
               <img src={changeimg} alt="" />
-              {/* <ReactAudioPlayer
+              <ReactAudioPlayer
                   src={music}
                   ref={audio}
                   autoPlay
@@ -140,7 +150,8 @@ const Nav = () => {
                   volume={volMusic}
                   id={"ms"}
                   style={{ display: "none" }}
-                /> */}
+                />
+
             </div>
             <input type="range"
               className="nav-range"

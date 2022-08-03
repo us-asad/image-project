@@ -6,17 +6,12 @@ const Modal = ({ show, children, w, mh }) => {
     <>
       {
         show ?
-
           <div className={`modalContainer ${show ? "show" : ""}`}>
-
             <div className="modal" onClick={(e) => e.stopPropagation()} style={{ width: `${w}px`, height: `${mh}px` }} >
-
-              <main className="modal_content"> {children} </main>
-
+              <main className="modal_content">{children}</main>
             </div>
-
           </div>
-          : null
+        : null
       }
     </>,
     document.getElementById("modal")
