@@ -1,0 +1,53 @@
+.splides .container .splide-img{
+    width: 160px;
+    height: 50px;
+    padding: 0px 10px;
+    object-fit: contain;
+  }
+ 
+ 
+  .splides{
+    visibility:visible;
+    text-align: center;
+}
+    
+.splide-slide{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    height: 132px;
+}
+
+.splide-link{
+    transition: 0.3s;
+    cursor: pointer;
+}
+ 
+
+.splides-list{
+    display: none;
+}
+.splides-title{
+    width: 384px;
+    height: 60px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #5B8A8D;
+    margin: 0 auto;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
+    height: 40px;
+    width: 220px;
+}
+.splides-top{
+    padding: 45px 0;
+}
+ 
+.splides{
+    background-image: linear-gradient(to bottom, white 0% 50% ,#FEEBE2 50% 100%);
+}

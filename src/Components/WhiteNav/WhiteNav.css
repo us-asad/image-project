@@ -1,0 +1,468 @@
+.whiteNav{
+    padding: 25px 0;
+   
+    background:  #e4e7e6;
+ 
+    
+}
+.whiteNav-left, .whiteNav .container, .whiteNav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.whiteNav-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.whiteNav-logo{
+ 
+    width: 80px;
+    height: 30px;
+}
+ 
+.whiteNav-link{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #5B8A8D;
+
+    padding: 10px 47px;
+    padding-bottom: 0;
+    padding-top: 0;
+    transition: 0.3s;
+}
+.whiteNav-list{
+    padding-left: 105px;
+}
+
+.whiteNav-link:hover{
+    color: black;
+    text-decoration:underline;
+}
+
+.whiteNav .volume img {
+    width: 1vw;
+  }
+.whiteNav .volume .upper {
+    width: 2.3vw;
+    height: 2.3vw;
+    background: #1d454a;
+   padding: 5px;
+    display: flex;
+   
+    justify-content: center;
+   
+    align-items: center;
+    border-radius: 0.3vw;
+     
+  }
+.whiteNav .volume {
+  
+    display: flex;
+    gap: 2vw;
+   
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    
+  }
+.whiteNav .volume input {
+    position: absolute;
+   margin-left: 15px;
+     
+    transform: rotate(-90deg) scale(0.7);
+    width: 7vw;
+     
+    transition: 0.5s;
+     
+  }
+.whiteNav .volume input[type='range'] {
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+.whiteNav .volume input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    /* color: #13bba4; */
+    margin-top: -1px;
+  }
+  
+.whiteNav .volume input[type='range']::-webkit-slider-thumb {
+    width: 12px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #1d454a;
+    border-radius: 50%;
+    /* background: #434343; */
+    box-shadow: -80px 0 0 80px #FFD3BF;
+     
+  }
+.whiteNav .volume:hover input {
+    opacity: 1;
+  }
+  
+   
+.whiteNav .drop {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1vw;
+    z-index: 9;
+    padding-top: 2vw;
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+.whiteNav a:hover ~ .drop,
+  .drop:hover {
+    opacity: 1;
+  }
+.whiteNav-menu{
+  display: none;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+.modal .closes-btn {
+  position: relative;
+  top: 0;
+  left:90%;
+  transform: translate(0%, -150%);
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  cursor:pointer;
+  z-index: 20;
+  
+}
+.modal .closes1-btn {
+  position: absolute;
+  top: 0;
+  left:82%;
+  transform: translate(0%, 3%);
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  cursor:pointer;
+  z-index: 20;
+  
+}
+.modal .aloqa-close {
+  position: absolute;
+  top: 0;
+  left: 99%;
+  transform: translate(-50%, -60%);
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  cursor:pointer;
+  z-index: 20;
+  
+}
+.burger-menu
+{
+  margin-top: -40px;
+}
+.whiteNav .burger-menu,
+.whiteNav  .burger-menu.open {
+display: inline-block;
+cursor: pointer;
+
+/* bottom: 40px; */
+z-index: 9999;
+background: #fff;
+padding: 10px;
+
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.whiteNav  .burger-menu .bar1,
+.whiteNav  .bar2,
+.whiteNav  .bar3 {
+width: 25px;
+height: 3px;
+background-color:white;
+margin: 4px 0;
+transition: 0.4s;
+}
+
+.burger-menu.open .bar1 {
+-webkit-transform: rotate(-45deg) translate(-4px, 4px);
+transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.burger-menu.open .bar2 {
+opacity: 0;
+}
+
+.burger-menu.open .bar3 {
+-webkit-transform: rotate(45deg) translate(-6px, -6px);
+transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Menu */
+
+.menu1 {
+width: 60%;
+display: block;
+text-align: center;
+padding: 0px;
+height: 100vh;
+transition: 0.4s;
+left: 100%;
+transform: translateX(-240px);
+background-color: white;
+
+}
+#popup-root .popup-overlay{
+  background-color: rgba(34, 25, 25, 0.7) !important;
+}
+.menu1 ul {
+position: relative;
+top: 0px;
+font-size: 24px;
+padding: 0px;
+}
+.menu1 li {
+list-style: outside none none;
+margin: 10px 0px;
+padding: 0;
+cursor: pointer;
+}
+.menu1 li:hover {
+color: #ff0000;
+}
+.menu1{
+  position: relative;
+}
+
+.close-menu{
+  position: absolute;
+  top: 1%;
+  left: 70%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.menu1 ul{
+  padding-top: 55px;
+  text-align: start;
+  padding-left: 38px;
+}
+
+/* Modal CSS */
+
+
+@media (max-width:620px) {
+  
+  .container{
+    width: 500px;
+  }
+
+  .close-menu{
+    left: 62%;
+  }
+}
+
+@media (max-width:520px) {
+  
+  .container{
+    width: 400px;
+  }
+
+  .close-menu{
+    left: 55%;
+  }
+
+
+}
+
+.whitenav-button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.lang-btn1{
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.navbars-list{
+  margin-top: 35px;
+}
+
+.navbar-item{
+  margin: 10px;
+}
+
+.lang-item1{
+  margin: 6px;
+}
+
+.navbar-link{
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5B8A8D;
+}
+.navbar-item .change-language {
+   position: relative;
+   padding-right: 20px;
+}
+@media (max-width: 910px) {
+   .navbar-item  .change-language {
+       margin-top: -5px;
+  }
+}
+@media (max-width: 600px) {
+   .navbar-item  .change-language {
+       margin-top: -15px;
+   }
+}
+@media (max-width: 500px) {
+   .navbar-item   .change-language {
+       padding-right: 0px;
+       margin-top: -15px;
+       margin-left: 100px;
+       margin-right: -20px;
+  }
+}
+.navbar-item  .change-language #language[type="checkbox"] {
+   display: none;
+}
+.navbar-item  .change-language label {
+   margin-top: 5px;
+   color: green;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 18px;
+   padding: 5px 10px;
+   padding-left: 0;
+   border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   -ms-border-radius: 7px;
+   -o-border-radius: 7px;
+}
+.navbar-item  .change-language label:hover {
+   /* background-color: white;
+   color: black; */
+   color: green;
+   cursor: pointer;
+}
+@media (max-width: 830px) {
+   .navbar-item  .change-language label {
+       font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+   .navbar-item  .change-language label {
+       margin-top: 0px;
+       padding: 5px 10px;
+       font-size: 16px;
+  }
+}
+.navbar-item  .change-language .language-menu {
+   position: absolute;
+   text-align: center;
+   margin-top: 10px;
+   left: -10px;
+   padding: 5px;
+   background-color: rgba(0, 0, 0, 0.829);
+}
+.navbar-item  .change-language .language-menu li {
+   list-style: none;
+   padding: 0 10px;
+   transition: 0.4s;
+   -webkit-transition: 0.4s;
+   -moz-transition: 0.4s;
+   -ms-transition: 0.4s;
+   -o-transition: 0.4s;
+   cursor: pointer;
+}
+.navbar-item  .change-language .language-menu li:hover {
+   background-color: white;
+}
+.navbar-item .change-language .language-menu li:hover .nav-link {
+   color: black;
+}
+.navbar-item  .change-language .language-menu a {
+   text-decoration: none;
+}
+.navbar-item  .change-language .language-menu a .nav-link {
+   color: green;
+}
+
+.d-none{
+   display: none;
+}
+
+.burger-menu{
+   background-color: transparent;
+   box-shadow: none;
+}

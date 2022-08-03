@@ -1,0 +1,119 @@
+.numbers-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.numbers-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.numbers-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.numbers-title {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 18px;
+
+  margin-bottom: 50px;
+
+  color: #5b8a8d;
+  height: 42px;
+  padding: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* background-color: red; */
+  overflow: hidden;
+  width: 390px;
+}
+
+.numbers {
+  padding: 90px 0;
+  padding-bottom: 0;
+  height: 102vh;
+}
+
+.numbers-item {
+  transition: all .3s;
+}
+
+.numbers-num {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 86px;
+  text-transform: uppercase;
+  padding: 80px 0;
+  color: #5e8d8f;
+}
+.numbers-medium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+.numbers-list {
+  width: 850px;
+}
+.numbers {
+  background-color: #fbf4ef;
+  background-image: url("../../Assets/Img/Rectangle49.png"),
+    url("../../Assets/Img/bg1.png");
+  background-repeat: no-repeat;
+  background-size: 139px 211px, 550px 700px;
+  background-position: top 38% left 45%, top 95% left 95%;
+  position: relative;
+}
+.numbers-left {
+  width: 40%;
+  position: absolute;
+  top: 34.9%;
+  left: 10.8%;
+}
+.numbers-right {
+  width: 60%;
+}
+
+.numbers-closer {
+  font-style: normal;
+  font-weight: 200;
+  font-size: 72px;
+  line-height: 86px;
+  text-transform: uppercase;
+  color: #5e8d8f;
+  opacity: 0.7;
+}
+
+.numbers-disactive {
+  font-style: normal;
+  font-weight: 200;
+  font-size: 72px;
+  line-height: 86px;
+  text-transform: uppercase;
+  color: #5e8d8f;
+  opacity: 0.3;
+}
+
+.numbers-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  /* background-color: red; */
+  max-height: 129px;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+
+  text-transform: uppercase;
+  width: 540px;
+  margin-left: 420px;
+  color: #5f8d8f;
+}

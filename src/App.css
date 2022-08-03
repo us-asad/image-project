@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,ol{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  width: 1140px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+ 
+::-webkit-scrollbar-thumb {
+  background: #5B8A8D;
+  border-radius: 10px;
+}
+
+body{
+  font-family: 'Mulish', sans-serif;
+font-family: 'Poppins', sans-serif;
+}

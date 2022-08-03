@@ -1,0 +1,114 @@
+.lang-btn1{
+   border: none;
+}
+.lang-list1{
+display: flex;
+/* justify-content: .; */
+}
+.lang-btn1{
+    margin: 0px 22px;
+}
+.lang-btn1:nth-child(1){
+    margin-left: 0;
+}
+
+.navbar-link{
+    color: black;
+    font-size: 18px;
+}
+.navbar-item .change-language {
+    position: relative;
+    padding-right: 20px;
+}
+@media (max-width: 910px) {
+    .navbar-item  .change-language {
+        margin-top: -5px;
+   }
+}
+@media (max-width: 600px) {
+    .navbar-item  .change-language {
+        margin-top: -15px;
+   }
+}
+@media (max-width: 500px) {
+    .navbar-item   .change-language {
+        padding-right: 0px;
+        margin-top: -15px;
+        margin-left: 100px;
+        margin-right: -20px;
+   }
+}
+.navbar-item  .change-language #language[type="checkbox"] {
+    display: none;
+}
+.navbar-item  .change-language label {
+    margin-top: 5px;
+    color: green;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 10px;
+    padding-left: 0;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+.navbar-item  .change-language label:hover {
+    /* background-color: white;
+    color: black; */
+    color: green;
+    cursor: pointer;
+}
+@media (max-width: 830px) {
+    .navbar-item  .change-language label {
+        font-size: 16px;
+   }
+}
+@media (max-width: 500px) {
+    .navbar-item  .change-language label {
+        margin-top: 0px;
+        padding: 5px 10px;
+        font-size: 16px;
+   }
+}
+.navbar-item  .change-language .language-menu {
+    position: absolute;
+    text-align: center;
+    margin-top: 10px;
+    left: -10px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.829);
+}
+.navbar-item  .change-language .language-menu li {
+    list-style: none;
+    padding: 0 10px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    cursor: pointer;
+}
+.navbar-item  .change-language .language-menu li:hover {
+    background-color: white;
+}
+.navbar-item .change-language .language-menu li:hover .nav-link {
+    color: black;
+}
+.navbar-item  .change-language .language-menu a {
+    text-decoration: none;
+}
+.navbar-item  .change-language .language-menu a .nav-link {
+    color: green;
+}
+
+.d-none{
+    display: none;
+}
+
+.burger-menu{
+    background-color: transparent;
+    box-shadow: none;
+}
