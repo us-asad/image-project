@@ -43,5 +43,6 @@
   "product_page_name_input": "Имя",
   "product_page_tel_input": "ТЕЛЕФОН НОМЕР",
   "product_page_button_name": "ОТПРАВИТЬ",
-  "product_page_no_products": "Продукты недоступны"
+  "product_page_no_products": "Продукты недоступны",
+  "product_page_color": "Цвет"
 }

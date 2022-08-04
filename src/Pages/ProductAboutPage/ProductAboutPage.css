@@ -12,7 +12,8 @@
 }
 .info .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
 }
 
 .info {
@@ -40,6 +41,7 @@
   border: 1px solid #5a969c;
   padding: 3px 2px;
   border-radius: 5px;
+  padding-bottom: 5px;
 }
 .color-item:nth-child(1) {
   margin-left: 0;
@@ -142,6 +144,8 @@
 }
 .info-pic {
   margin: 15px 15px 0 0;
+  width: 30px;
+  height: 30px;
   background-color: transparent;
 }
 
@@ -227,3 +231,25 @@
 .product-form button {
   margin: 0;
 }
+
+
+@media (max-width: 800px) {
+  .info .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .info-left, .info-right {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .info-box {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}
+

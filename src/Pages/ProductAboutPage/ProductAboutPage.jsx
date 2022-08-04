@@ -8,6 +8,8 @@ import { Link, useParams } from "react-router-dom";
 import Form from "../../Components/Form/From";
 import ModalWithBg from "../../Components/ModalWithBg/ModalWithBg";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import { AiFillStar } from "react-icons/ai";
 
 const ProductAboutPage = () => {
   const [value, setValue] = useState(4);
@@ -53,14 +55,13 @@ const ProductAboutPage = () => {
             </div>
           </div>
           <div className="info-right">
-            <h2 className="info-title">{product.name_en}</h2>
-            <Rating
-              name="simple-controlled"
-              value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-            />
+            <h2 className="info-title">{product[`name_${i18next.language}`]}</h2>
+            <div style={{display: "flex", marginTop: "10px", marginBottom: "30px"}}>
+              {[...new Array(5)].map((_, i) => (
+                <AiFillStar key={i} style={{ color: "#E9A426", fontSize: "18px" }} />
+              ))}
+            </div>
+            <p className="font-mulish" style={{color: "#5B8A8D"}}>{t("product_page_color")}</p>
             <ul className="color-list">
               <li className="color-item">
                 <span></span>
@@ -80,14 +81,14 @@ const ProductAboutPage = () => {
               >{t("product_page_order_button")}</button>
             </div>
             <div className="info-text">
-              {product.description_en}
+              {product[`description_${i18next.language}`]}
             </div>
             <div className="info-logo">
-              <img src={logo} alt="" className="info-pic" />
-              <img src={logo} alt="" className="info-pic" />
-              <img src={logo} alt="" className="info-pic" />
-              <img src={logo} alt="" className="info-pic" />
-              <img src={logo} alt="" className="info-pic" />
+              <img src="/img/product-icons/1.jpg" alt="" className="info-pic" />
+              <img src="/img/product-icons/2.jpg" alt="" className="info-pic" />
+              <img src="/img/product-icons/3.jpg" alt="" className="info-pic" />
+              <img src="/img/product-icons/4.jpg" alt="" className="info-pic" />
+              <img src="/img/product-icons/5.jpg" alt="" className="info-pic" />
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ const ProductAboutPage = () => {
                   <div className="category-images">
                     <img src={e.image1} alt="" className="category-img" />
                   </div>
-                  <p className="category-text">{e.name_en}</p>
+                  <p className="category-text">{e[`name_${i18next.language}`]}</p>
                   <div className="category-titles">
                     <p className="category-numbers">$ {e.cost}<span>/m</span></p>
                     <button className="category-button">{t("product_page_order_button")}</button>

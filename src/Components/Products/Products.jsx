@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const Products = () => {
   const [getPrds, setGetPrds] = useState(1)
@@ -63,7 +64,8 @@ const Products = () => {
                       <img src={e.image} alt="" className="splide-img" />
                     </div>
                     <h2 className="splide-title">
-                      {e.name_en} </h2>
+                     { console.log(e[`name_${i18next.language}`])}
+                      {e[`name_${i18next.language}`]} </h2>
                   </Link>
                 </SwiperSlide>
               ))

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Category.css";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const Category = ({ categoryPage }) => {
   const [categories, setCategories] = useState([]);
@@ -24,8 +25,6 @@ const Category = ({ categoryPage }) => {
       });
   }, [params]);
 
-  console.log(categories.find(({ id }) => id == params.id)?.name_en)
-
   return (
     <div className="category">
       <div className="container">
@@ -38,7 +37,7 @@ const Category = ({ categoryPage }) => {
                     <Link key={category.id} to={`/${categoryPage ? "category" : "services"}/${category.id}`}>
                       <li className={`faq_list__item ${category.id == params.id ? "active" : null}`}>
                         <div className="text_wrap faq_list__item__question_wrapper">
-                          <h4 className="faq_header">{category.name_en}</h4>
+                          <h4 className="faq_header">{category[`name_${i18next.language}`]}</h4>
                         </div>
                       </li>
                     </Link>
@@ -48,7 +47,7 @@ const Category = ({ categoryPage }) => {
             </div>
           </div>
           <div className="category-right">
-            <h3 className="category-names">{categories.find(({ id }) => id == params.id)?.name_en}</h3>
+            <h3 className="category-names">{categories.find(({ id }) => id == params.id) && categories.find(({ id }) => id == params.id)[`name_${i18next.language}`]}</h3>
             <div className="category-box">
               {data.length ?
                 data.map((e, i) => (
@@ -60,7 +59,7 @@ const Category = ({ categoryPage }) => {
                     <div className="category-images">
                       <img src={e.image1} alt="" className="category-img" />
                     </div>
-                    <p className="category-text">{e.name_en}</p>
+                    <p className="category-text">{e[`name_${i18next.language}`]}</p>
                     <div className="category-titles">
                       <p className="category-numbers">
                         $ {e.cost}

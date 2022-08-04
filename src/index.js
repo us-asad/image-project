@@ -8,12 +8,7 @@ import "./Pages/ProductAboutPage/ProductAboutPage.css";
 import "swiper/css/bundle";
 import "../src/Pages/ProductAboutPage/styles.css";
 import "swiper/css/bundle";
-
-const Loader = (
-  <div className="spinner-border" role="status">
-    <span className="visually-hidden">Loading...</span>
-  </div>
-)
+import Loader from './Components/Loader/Loader';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

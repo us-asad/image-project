@@ -13,6 +13,7 @@
 
 .footer__hero {
   max-width: 100%;
+  margin: auto;
   width: 930px;
   height: 357px;
   border: 1px solid #5b8a8d;

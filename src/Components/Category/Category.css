@@ -4,7 +4,7 @@
 
 .category-blok {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .category-title {
@@ -344,7 +344,7 @@ span {
   }
   .category-blok {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     flex-wrap: wrap;
     width: 270px;
