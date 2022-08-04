@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="footer__hero-top">
             <div className="footer__logo">
               <a className="footer__logo-link" href="#">
-                <img src={FooterLogo} alt="Site-logo" width="80" height="29" />
+                <img src="/img/logo.png" className="nav-brand" alt="Site-logo" width="80" height="29" />
               </a>
             </div>
             <div className="hero__parent-link">

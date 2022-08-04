@@ -108,7 +108,7 @@ const Nav = () => {
       <div className="container">
         <div className="nav-left">
           <a href="/" className="nav-logo">
-            <img src={Logo} alt="" className="nav-brand" />
+            <img src="/img/logo.png" alt="" className="nav-brand" />
           </a>
           <ul className="nav-list">
             <li className="nav-item">
@@ -138,7 +138,7 @@ const Nav = () => {
             <div className="upper" onClick={play}>
               <img src={changeimg} alt="" />
               <ReactAudioPlayer
-                src={music}
+                src="/music.mp3"
                 ref={audio}
                 // autoPlay
                 controls

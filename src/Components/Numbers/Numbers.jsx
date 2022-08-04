@@ -62,7 +62,7 @@ const Numbers = () => {
         </div>
         <div className="numbers-bottom">
           <div className="numbers-left">
-            <img src={leftImg} alt="" className="numbers-img" style={start ? { transform: "translateY(40%)" } : {}} />
+            <img src={leftImg} alt="" className="numbers-img" style={start ? { transform: "translateY(200%)" } : {}} />
           </div>
           <div className="numbers-right">
             <p className="numbers-text">

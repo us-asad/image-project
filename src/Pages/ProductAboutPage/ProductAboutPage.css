@@ -24,12 +24,14 @@
   align-items: center;
 }
 .color-item span {
-  width: 15px;
-  height: 15px;
   padding: 3px 10px;
   background: #f38db8;
   border-radius: 5px;
+  display: block;
+  width: 7px;
+  height: 17px;
 }
+
 .color-item:nth-child(2) span {
   background: #ccd59d;
 }
@@ -37,11 +39,12 @@
   background: #ffb83a;
 }
 .color-item {
+  display: block;
   margin: 10px 5px;
   border: 1px solid #5a969c;
   padding: 3px 2px;
   border-radius: 5px;
-  padding-bottom: 5px;
+  height: 25px;
 }
 .color-item:nth-child(1) {
   margin-left: 0;

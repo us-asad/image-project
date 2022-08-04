@@ -60,6 +60,10 @@
      border: 2px solid white;
  }
 
+ .form__login-btn:hover span {
+    color: white
+ }
+
  .qeusion__section {
      position: relative;
  }

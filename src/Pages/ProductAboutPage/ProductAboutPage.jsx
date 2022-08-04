@@ -84,11 +84,11 @@ const ProductAboutPage = () => {
               {product[`description_${i18next.language}`]}
             </div>
             <div className="info-logo">
-              <img src="/img/product-icons/1.jpg" alt="" className="info-pic" />
-              <img src="/img/product-icons/2.jpg" alt="" className="info-pic" />
-              <img src="/img/product-icons/3.jpg" alt="" className="info-pic" />
-              <img src="/img/product-icons/4.jpg" alt="" className="info-pic" />
-              <img src="/img/product-icons/5.jpg" alt="" className="info-pic" />
+              <img src="/img/product-icons/1.png" alt="" className="info-pic" />
+              <img src="/img/product-icons/2.png" alt="" className="info-pic" />
+              <img src="/img/product-icons/3.png" alt="" className="info-pic" />
+              <img src="/img/product-icons/4.png" alt="" className="info-pic" />
+              <img src="/img/product-icons/5.png" alt="" className="info-pic" />
             </div>
           </div>
         </div>

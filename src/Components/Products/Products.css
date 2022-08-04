@@ -94,6 +94,7 @@ body {
   width: 185px;
   height: 270px;
   position: relative;
+  overflow: hidden;
 }
 
 .splide-header .splide-img {
@@ -102,6 +103,11 @@ body {
   position: absolute;
   top: 21.7%;
   left: 0;
+  transition: all .5s;
+}
+
+.splide-header .splide-img:hover {
+  transform: scale(1.1);
 }
 
 .swiper-slide:nth-child(odd) .splide-header {

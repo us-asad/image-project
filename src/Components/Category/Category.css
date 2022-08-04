@@ -100,14 +100,17 @@
   width: 150px;
   height: 164px;
   text-align: center;
+  overflow: hidden;
 }
-.category-img {
-  /* margin-top: 35px; */
+
+.category-img:hover {
+  transform: scale(1.1);
 }
 
 .category-img {
   width: 130px;
   height: 140px;
+  transition: all .5s;
 }
 .category-numbers {
   font-family: "Mulish";
