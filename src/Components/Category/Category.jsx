@@ -12,19 +12,21 @@ const Category = ({ categoryPage, className }) => {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://93.189.40.27:2200/${categoryPage ? "categories" : "service_category"}/?format=json`)
+    fetch(`https://api-baf.abba.uz/${categoryPage ? "categories" : "service_category"}/?format=json`)
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
 
   useEffect(() => {
-    fetch(`http://93.189.40.27:2200/products/?format=json`)
+    fetch(`https://api-baf.abba.uz/products/?format=json`)
       .then(res => res.json())
       .then(data => {
         console.log(data, params)
         setData(data.filter(prd => prd.category == params.id));
       });
-  }, []);
+  }, [params]);
+
+  console.log(categories.find(({ id }) => id == params.id)?.name_en)
 
   return (
     <div className="category">
@@ -48,9 +50,9 @@ const Category = ({ categoryPage, className }) => {
             </div>
           </div>
           <div className="category-right">
-            <h3 className="category-names">Бязь</h3>
+            <h3 className="category-names">{categories.find(({ id }) => id == params.id)?.name_en}</h3>
             <div className="category-box">
-              {data &&
+              {data.length ?
                 data.map((e, i) => (
                   <Link
                     key={i}
@@ -69,7 +71,7 @@ const Category = ({ categoryPage, className }) => {
                       <button className="category-button">Заказать</button>
                     </div>
                   </Link>
-                ))}
+                )) : <h2>Mahsulotlar mavjud emas</h2>}
             </div>
           </div>
         </div>

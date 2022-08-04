@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -9,11 +9,19 @@ import "swiper/css/bundle";
 import "../src/Pages/ProductAboutPage/styles.css";
 import "swiper/css/bundle";
 
+const Loader = (
+  <div className="spinner-border" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </div>
+)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Suspense fallback={Loader}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Suspense>
 );
 
 

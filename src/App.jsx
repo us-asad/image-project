@@ -25,52 +25,15 @@ i18n
     backend: {
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
-    react: {useSuspense: false}
   });
 
 function App() {
   const { t, i18n } = useTranslation()
 
-  const [english, setEnglish] = useState(true);
-  const [russian, setRussian] = useState(false);
-  const [uzbek, setUzbek] = useState(false)
-  const [langTitle, setLangTitle] = useState(localStorage.getItem('i18nextLng') ? localStorage.getItem('i18nextLng').toUpperCase() : "")
-
-  function change1(item) {
-    i18n.changeLanguage("ru")
-    setLangTitle(localStorage.getItem('i18nextLng').toUpperCase())
-    setRussian(item)
-    setEnglish(!item)
-    setUzbek(!item)
-  }
-  function change2(item) {
-    i18n.changeLanguage("en")
-    setLangTitle(localStorage.getItem('i18nextLng').toUpperCase())
-    setEnglish(item)
-    setRussian(!item)
-    setUzbek(!item)
-  }
-  function change3(item) {
-    i18n.changeLanguage("uz")
-    setLangTitle(localStorage.getItem('i18nextLng').toUpperCase())
-    setUzbek(item)
-    setEnglish(!item)
-    setRussian(!item)
-
-  }
-
-
-  window.addEventListener("load", () => {
-    setRussian(true)
-    setEnglish(false)
-    localStorage.setItem("i18nextLng", "en")
-    setLangTitle(localStorage.getItem('i18nextLng').toUpperCase())
-  });
-
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage change1={change1} change2={change2} change3={change3} />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/category/:id" element={<ProductPage categoryPage />} />
         <Route path="/services/:id" element={<ProductPage />} />
         <Route path='/about' element={<CompanyPage />} />

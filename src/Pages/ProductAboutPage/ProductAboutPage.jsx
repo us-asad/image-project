@@ -7,6 +7,7 @@ import logo from '../../Assets/Img/logos.png'
 import { Link, useParams } from "react-router-dom";
 import Form from "../../Components/Form/From";
 import ModalWithBg from "../../Components/ModalWithBg/ModalWithBg";
+import { useTranslation } from "react-i18next";
 
 const ProductAboutPage = () => {
   const [value, setValue] = useState(4);
@@ -14,6 +15,7 @@ const ProductAboutPage = () => {
   const [product, setProduct] = useState({});
   const [openModal, setOpenModal] = useState(false);
   const params = useParams();
+  const { t } = useTranslation();
 
   const toggleModal = state => {
     setOpenModal(state);
@@ -21,13 +23,13 @@ const ProductAboutPage = () => {
   }
 
   useEffect(() => {
-    fetch(`http://93.189.40.27:2200/products/?format=json`)
+    fetch(`https://api-baf.abba.uz/products/?format=json`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
 
   useEffect(() => {
-    fetch(`http://93.189.40.27:2200/products/${params.id}/?format=json`)
+    fetch(`https://api-baf.abba.uz/products/${params.id}/?format=json`)
       .then((res) => res.json())
       .then((prd) => setProduct(prd));
   }, [params]);
@@ -75,7 +77,7 @@ const ProductAboutPage = () => {
               <button
                 className="info-btn"
                 onClick={() => toggleModal(true)}
-              >Заказать</button>
+              >{t("product_page_order_button")}</button>
             </div>
             <div className="info-text">
               {product.description_en}
@@ -92,7 +94,7 @@ const ProductAboutPage = () => {
       </div>
       <div className="primary">
         <div className="container">
-          <h2 className="info__name">Похожие продукты</h2>
+          <h2 className="info__name">{t("product_page_related")}</h2>
           <div className="info-box">
             {
               data && data.map((e, i) => (
@@ -103,7 +105,7 @@ const ProductAboutPage = () => {
                   <p className="category-text">{e.name_en}</p>
                   <div className="category-titles">
                     <p className="category-numbers">$ {e.cost}<span>/m</span></p>
-                    <button className="category-button">Заказать</button>
+                    <button className="category-button">{t("product_page_order_button")}</button>
                   </div>
                 </Link>
               ))
@@ -113,10 +115,10 @@ const ProductAboutPage = () => {
       </div>
       <ModalWithBg open={openModal} toggleOpen={toggleModal}>
         <form action="" className="product-form">
-          <h3 className="form-name product-form-title">Заказать</h3>
+          <h3 className="form-name product-form-title">{t("product_page_order_button")}</h3>
           <input type="name" placeholder='Name' required className="form-input" />
           <input type="tell " placeholder='Telefon nomer' required className="form-input" />
-          <button className="form-btn">ОТПРАВИТЬ</button>
+          <button className="form-btn">{t("product_page_button_name")}</button>
         </form>
       </ModalWithBg>
       <Form />

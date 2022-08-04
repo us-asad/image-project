@@ -117,3 +117,8 @@
   margin-left: 420px;
   color: #5f8d8f;
 }
+
+
+.numbers-img {
+  transition: all 1s ease;
+}

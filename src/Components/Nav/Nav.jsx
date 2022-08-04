@@ -1,19 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Nav.css"
 import Logo from "../../Assets/Img/Logo.png"
-import menuBtn from "../../Assets/Img/menu.png"
 import ReactAudioPlayer from "react-audio-player";
 import music from "../../Assets/Img/music.mp3"
 import { useEffect, useRef, useState } from "react";
-import BurgerIcon from "./BurgerIcon";
-import Popup from "reactjs-popup";
-import Menu1 from "../Menu/Menu1";
 import toggle from '../../Assets/Img/toggles.png'
 import React from 'react';
 import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
-
-
+import i18next from "i18next";
 
 const customStyles = {
   content: {
@@ -118,22 +113,22 @@ const Nav = () => {
           <ul className="nav-list">
             <li className="nav-item">
               <a href="#" className="nav-link">
-              Продукты
+                {t("nav_item_1")}
               </a>
             </li>
             <li className="nav-item">
               <Link to="/about" className="nav-link">
-                О нас
+                {t("nav_item_2")}
               </Link>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link">
-                Наши фабрики
+                {t("nav_item_3")}
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link">
-                Связь
+                {t("nav_item_4")}
               </a>
             </li>
           </ul>
@@ -143,28 +138,23 @@ const Nav = () => {
             <div className="upper" onClick={play}>
               <img src={changeimg} alt="" />
               <ReactAudioPlayer
-                  src={music}
-                  ref={audio}
-                  autoPlay
-                  controls
-                  volume={volMusic}
-                  id={"ms"}
-                  style={{ display: "none" }}
-                />
-
+                src={music}
+                ref={audio}
+                // autoPlay
+                controls
+                volume={volMusic}
+                id={"ms"}
+                style={{ display: "none" }}
+              />
             </div>
             <input type="range"
               className="nav-range"
               onChange={change} name="" id="" />
           </div>
-
           <button onClick={openModal} className="nav-button">
             <img src={toggle} alt="" className="whitenav-toggle" />
           </button>
-
-
         </div>
-
         <div className="whitenav-modal">
           <Modal
             isOpen={modalIsOpen}
@@ -179,47 +169,53 @@ const Nav = () => {
               </button>
               <li className="navbar-item">
                 <a href="#products" className="navbar-link">
-                  Продукты
+                  {t("nav_item_1")}
                 </a>
               </li>
               <li className="navbar-item">
                 <a href="#about"
                   className="navbar-link">
-                  О нас
+                  {t("nav_item_2")}
                 </a>
               </li>
               <li className="navbar-item">
                 <a href="#blogs" className="navbar-link">
-                  Наши фабрики
+                  {t("nav_item_3")}
                 </a>
               </li>
               <li className="navbar-item">
                 <a href="#contact" className="navbar-link">
-                  Связь
+                  {t("nav_item_4")}
                 </a>
               </li>
-
               <li className="navbar-item">
-
                 <ol className="lang-list1">
                   <li className="lang-item1">
-                    <button className="lang-btn1">
+                    <button
+                      className="lang-btn1"
+                      onClick={() => i18next.changeLanguage("ru")}
+                    >
                       RU
                     </button>
                   </li>
                   <li className="lang-item1">
-                    <button className="lang-btn1">
+                    <button
+                      className="lang-btn1"
+                      onClick={() => i18next.changeLanguage("uz")}
+                    >
                       UZ
                     </button>
                   </li>
                   <li className="lang-item1">
-                    <button className="lang-btn1">
+                    <button
+                      className="lang-btn1"
+                      onClick={() => i18next.changeLanguage("en")}
+                    >
                       EN
                     </button>
                   </li>
                 </ol>
               </li>
-
             </ul>
           </Modal>
         </div>

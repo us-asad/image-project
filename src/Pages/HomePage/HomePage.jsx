@@ -9,20 +9,20 @@ import Products from "../../Components/Products/Products";
 import Tour from "../../Components/Tour/Tour";
 import "./HomePage.css"
 
-const HomePage = ({change1, change2, change3}) =>{
-    return (
-<div className="home-page">
-    <Nav />
-    <Header change1={change1} change2={change2} change3={change3} />
-    <Products />
-    <About />
-    <Numbers />
-    <Tour />
-    <Partner />
-    <Contact />
-    <Footer />
-</div>
-    )
+const HomePage = () => {
+  return (
+    <div className="home-page">
+      <Nav />
+      <Header />
+      <Products />
+      <About />
+      <Numbers />
+      <Tour />
+      <Partner />
+      <Contact />
+      <Footer />
+    </div>
+  )
 }
 
 export default HomePage;

@@ -7,8 +7,9 @@ import headerBg from "../../Assets/Img/bg1.png";
 import { useTranslation } from 'react-i18next';
 import { useState } from "react";
 import ModalWithBg from "../ModalWithBg/ModalWithBg";
+import i18next from "i18next";
 
-const Header = ({ change1, change2, change3 }) => {
+const Header = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
   const { t } = useTranslation();
 
@@ -21,18 +22,12 @@ const Header = ({ change1, change2, change3 }) => {
     <header className="header">
       <div className="container">
         <div className="header-left">
-          <h1 className="header-title">
-            Произ
-            -водство
-            тканей  </h1>
-          <p className="header-text">
-            востребованное направление
-            бизнеса
-          </p>
+          <h1 className="header-title">{t("home_page_title")}</h1>
+          <p className="header-text">{t("home_page_subtitle")}</p>
           <div className="header-btns">
             <div className="download-box">
               <a href={down} download className="download-btn">
-                Скачать каталог
+                {t("home_page_download")}
               </a>
               <div className="download-blok">
                 <img src={downloadIcon} alt="" className="download-icon" />
@@ -43,7 +38,7 @@ const Header = ({ change1, change2, change3 }) => {
                 className="ytb-btn"
                 onClick={() => toggleYtModal(!openYtModal)}
               >
-                Смотреть ролик
+                {t("home_page_play_video")}
               </button>
               <div className="ytb-blok">
                 <img src={ytbIcon} alt="" className="ytb-icon" />
@@ -60,17 +55,17 @@ const Header = ({ change1, change2, change3 }) => {
           <div className="lang-box">
             <ul className="lang-list">
               <li className="lang-item">
-                <button onClick={() => change1(true)} className="lang-btn">
+                <button onClick={() => i18next.changeLanguage("ru")} className="lang-btn">
                   RU
                 </button>
               </li>
               <li className="lang-item">
-                <button onClick={() => change3(true)} className="lang-btn">
+                <button onClick={() => i18next.changeLanguage("uz")} className="lang-btn">
                   UZ
                 </button>
               </li>
               <li className="lang-item">
-                <button onClick={() => change2(true)} className="lang-btn">
+                <button onClick={() => i18next.changeLanguage("en")} className="lang-btn">
                   EN
                 </button>
               </li>
