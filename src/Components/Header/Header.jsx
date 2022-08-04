@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useState } from "react";
 import ModalWithBg from "../ModalWithBg/ModalWithBg";
 import i18next from "i18next";
+import { languages } from "../../data";
 
 const Header = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
@@ -54,40 +55,35 @@ const Header = () => {
           </div>
           <div className="lang-box">
             <ul className="lang-list">
-              <li className="lang-item">
-                <button onClick={() => i18next.changeLanguage("ru")} className="lang-btn">
-                  RU
-                </button>
-              </li>
-              <li className="lang-item">
-                <button onClick={() => i18next.changeLanguage("uz")} className="lang-btn">
-                  UZ
-                </button>
-              </li>
-              <li className="lang-item">
-                <button onClick={() => i18next.changeLanguage("en")} className="lang-btn">
-                  EN
-                </button>
-              </li>
+              {languages.map(lang => (
+                <li key={lang} className={`lang-item ${i18next.language === lang ? "active" : null}`}>
+                  <button onClick={() => i18next.changeLanguage(lang)} className="lang-btn">
+                    {lang}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
       <ModalWithBg open={openYtModal} toggleOpen={toggleYtModal}>
         <div className="iframe-container">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/ng7D1a5cTIk"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          {openYtModal && (
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/ng7D1a5cTIk"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
         </div>
       </ModalWithBg>
     </header>
   )
 }
+
 
 export default Header;

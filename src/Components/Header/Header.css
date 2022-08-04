@@ -167,6 +167,24 @@
   color: #ffffff;
 }
 
+.lang-item {
+  opacity: .5;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.lang-item > button {
+  cursor: pointer;
+}
+
+.lang-item.active {
+  opacity: 1;
+}
+
+.lang-item:hover {
+  opacity: 1;
+}
+
 .iframe-container iframe {
   border-radius: 10px;
 }

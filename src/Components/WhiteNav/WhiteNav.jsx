@@ -6,6 +6,8 @@ import toggle from '../../Assets/Img/toggle.png'
 import React from 'react';
 import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import { languages } from "../../data";
 
 const customStyles = {
   content: {
@@ -177,21 +179,16 @@ const WhiteNav = () => {
               </li>
               <li className="navbar-item">
                 <ol className="lang-list1">
-                  <li className="lang-item1">
-                    <button className="lang-btn1">
-                      RU
-                    </button>
-                  </li>
-                  <li className="lang-item1">
-                    <button className="lang-btn1">
-                      UZ
-                    </button>
-                  </li>
-                  <li className="lang-item1">
-                    <button className="lang-btn1">
-                      EN
-                    </button>
-                  </li>
+                  {languages.map(lang => (
+                    <li className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
+                      <button
+                        className="lang-btn1"
+                        onClick={() => i18next.changeLanguage(lang)}
+                      >
+                        {lang}
+                      </button>
+                    </li>
+                  ))}
                 </ol>
               </li>
             </ul>

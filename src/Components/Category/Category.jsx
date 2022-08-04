@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Category.css";
-
-import line from "../../Assets/Img/line.png";
-import plus from "../../Assets/Img/plus.png";
-import matras from "../../Assets/Img/matras.png";
 import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const Category = ({ categoryPage, className }) => {
+const Category = ({ categoryPage }) => {
   const [categories, setCategories] = useState([]);
   const [data, setData] = useState([]);
   const params = useParams();
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch(`https://api-baf.abba.uz/${categoryPage ? "categories" : "service_category"}/?format=json`)
@@ -68,10 +66,10 @@ const Category = ({ categoryPage, className }) => {
                         $ {e.cost}
                         <span>/m</span>
                       </p>
-                      <button className="category-button">Заказать</button>
+                      <button className="category-button">{t("product_page_order_button")}</button>
                     </div>
                   </Link>
-                )) : <h2>Mahsulotlar mavjud emas</h2>}
+                )) : <h2>{t("product_page_no_products")}</h2>}
             </div>
           </div>
         </div>
@@ -80,35 +78,3 @@ const Category = ({ categoryPage, className }) => {
   );
 };
 export default Category;
-
-const faqArray = [
-  {
-    category: "Tkani",
-    question: " I register?",
-    answer: "Do you  ",
-  },
-  {
-    question: "prices?",
-    answer: "Lorem et ",
-  },
-  {
-    question: " I canc ?",
-    answer: "Lorem ip i!",
-  },
-  {
-    question: "   stions?",
-    answer: " lit. Vo gendi!",
-  },
-  {
-    question: "Hcy orders?",
-    answer: "Lorem ipd!",
-  },
-  {
-    question: "Hods?",
-    answer: "Lorem ipsd!",
-  },
-  {
-    question: "How c orders?",
-    answer: " eligendi!",
-  },
-];

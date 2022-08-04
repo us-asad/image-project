@@ -9,6 +9,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import { languages } from "../../data";
 
 const customStyles = {
   content: {
@@ -25,7 +26,6 @@ const customStyles = {
 
 const Nav = () => {
   const { t } = useTranslation();
-
   //Modal
 
   let subtitle;
@@ -190,30 +190,16 @@ const Nav = () => {
               </li>
               <li className="navbar-item">
                 <ol className="lang-list1">
-                  <li className="lang-item1">
-                    <button
-                      className="lang-btn1"
-                      onClick={() => i18next.changeLanguage("ru")}
-                    >
-                      RU
-                    </button>
-                  </li>
-                  <li className="lang-item1">
-                    <button
-                      className="lang-btn1"
-                      onClick={() => i18next.changeLanguage("uz")}
-                    >
-                      UZ
-                    </button>
-                  </li>
-                  <li className="lang-item1">
-                    <button
-                      className="lang-btn1"
-                      onClick={() => i18next.changeLanguage("en")}
-                    >
-                      EN
-                    </button>
-                  </li>
+                  {languages.map(lang => (
+                    <li key={lang} className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
+                      <button
+                        className="lang-btn1"
+                        onClick={() => i18next.changeLanguage(lang)}
+                      >
+                        {lang}
+                      </button>
+                    </li>
+                  ))}
                 </ol>
               </li>
             </ul>
@@ -221,7 +207,7 @@ const Nav = () => {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 export default Nav;
