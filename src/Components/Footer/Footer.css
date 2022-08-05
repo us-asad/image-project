@@ -19,7 +19,7 @@
   height: 357px;
   border: 1px solid #5b8a8d;
   border-radius: 50px;
-  padding-top: 55px;
+  padding: 20px !important;
 }
 
 .footer__hero-top {

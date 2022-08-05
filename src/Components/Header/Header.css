@@ -89,10 +89,18 @@
   cursor: pointer;
 }
 
-.download-blok {
+.download-btn {
+  cursor: pointer;
+}
+
+#down-btn {
   position: absolute;
   top: 0;
-  left: 0;
+  width: 80%;
+  cursor: default !important;
+}
+
+.download-blok {
   background-color: #ffebe2;
   padding: 8px;
   width: 62px;
@@ -101,6 +109,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .ytb-box {

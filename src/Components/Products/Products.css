@@ -172,3 +172,27 @@ body {
   background-color: transparent;
   padding: 8px 45px;
 }
+
+
+@media (max-width: 500px) {
+  .info__title, .info-titles {
+    width: 100% !important;
+  }
+
+  .info__title .div {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .info__title .div:last-child {
+    margin-top: 10px;
+  }
+
+  .info__title .info-imgs, .info-titles img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0 !important;
+  }
+}
+

@@ -5,10 +5,11 @@ import downloadIcon from "../../Assets/Img/Group5.svg"
 import ytbIcon from "../../Assets/Img/Shape.svg";
 import headerBg from "../../Assets/Img/bg1.png";
 import { useTranslation } from 'react-i18next';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalWithBg from "../ModalWithBg/ModalWithBg";
 import i18next from "i18next";
 import { languages } from "../../data";
+import interact from "interactjs";
 
 const Header = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
@@ -26,12 +27,15 @@ const Header = () => {
           <h1 className="header-title">{t("home_page_title")}</h1>
           <p className="header-text">{t("home_page_subtitle")}</p>
           <div className="header-btns">
-            <a href={down} download  className="download-box">
+            <a href={down} download className="download-box">
+              {/* href={down} download  */}
               <div className="download-btn">
                 {t("home_page_download")}
               </div>
-              <div className="download-blok">
-                <img src={downloadIcon} alt="" className="download-icon" />
+              <div id="down-btn">
+                <div className="download-blok">
+                  <img src={downloadIcon} alt="" className="download-icon" />
+                </div>
               </div>
             </a>
             <div className="ytb-box">

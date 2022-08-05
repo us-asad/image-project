@@ -168,6 +168,10 @@
     padding-left: 90px;
     padding-top: 50px;
   }
+
+  .qeusion .container {
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 823px) {
@@ -274,3 +278,6 @@
     line-height: 48px;
   }
 }
+
+
+

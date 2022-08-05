@@ -146,13 +146,12 @@ const WhiteNav = () => {
           <button onClick={openModal} className="nav-button">
             <img src={toggle} alt="" className="whitenav-toggle" />
           </button>
-          <div style={{ display: "flex", gap: "10px", color: "#000" }} className="hidden-after-1000">
-            <span style={{ padding: "6px 8.5px", border: "1px solid #000", borderRadius: "50%", display: "block" }}>
-              <BsTelephone style={{ fontSize: "18px", color: "#000" }} />
+          <div style={{ display: "flex", gap: "10px", color: "white", alignItems: "center" }} className="hidden-after-1000">
+            <span style={{ padding: "4.5px 5.5px", border: "1px solid #fff", borderRadius: "50%", display: "grid", placeContent: "center" }}>
+              <BsTelephone style={{ fontSize: "14px", color: "white" }} />
             </span>
-            <div style={{ display: "flex", gap: "3px", flexDirection: "column" }}>
-              <p>99-929-39-32</p>
-              <p>12-332-32-12</p>
+            <div style={{display: "flex", gap: "3px", flexDirection: "column"}}>
+              <p>+998 99 708-00-80</p>
             </div>
           </div>
         </div>

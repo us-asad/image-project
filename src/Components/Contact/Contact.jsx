@@ -7,7 +7,7 @@ const Contact = () => {
 
   return (
     <section className="qeusion" id="contact">
-      <div className="container" style={{minWidth: "max-content"}}>
+      <div className="container">
         <div className="qeusion__section">
           <div className="quesion__form" style={{position: "relative", zIndex: 10}}>
             <h1 className="quesion__form-title">{t("home_page_contact_title")}</h1>

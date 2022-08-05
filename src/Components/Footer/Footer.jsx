@@ -45,24 +45,21 @@ const Footer = () => {
           <div className="footer__hero-bottom">
             <span className="footer__bottom-reserv">{t("footer_copyright")}</span>
             <div className="footer__reserv-communication">
-              <a className="footer__communication-link" href="tel:+99890 131 2000">{t("footer_contact_tel_title")}:
-                <p className="communication__link-text">+99890 131 2000</p>
+              <a className="footer__communication-link" href="tel:+998997080080">{t("footer_contact_tel_title")}:
+                <p className="communication__link-text">+998997080080</p>
               </a>
-              <a className="footer__communication-link" href="#">{t("footer_contact_email_title")}:
-                <p className="communication__link-text">imagetextile@gmail.com</p>
+              <a className="footer__communication-link" href="mail:info@baftex.uz">{t("footer_contact_email_title")}:
+                <p className="communication__link-text">info@baftex.uz</p>
               </a>
               <address className="footer__communication-link ">{t("footer_contact_address_title")}:
                 <p className="communication__link-text address__text">{t("footer_contact_address")}</p>
               </address>
             </div>
             <div className="footer__social">
-              <a className="footer__social-link" href="#">
-                <img src={TelegramIcon} alt="telegram-icon" width="12" height="12" />
-              </a>
-              <a className="footer__social-link" href="#">
+              <a className="footer__social-link" href="https://www.facebook.com/imagestex" target="_blank" rel="noreferrer">
                 <img src={FacebookIcon} alt="telegram-icon" width="12" height="12" />
               </a>
-              <a className="footer__social-link" href="#">
+              <a className="footer__social-link" href="https://www.instagram.com/image.textile" target="_blank" rel="noreferrer">
                 <img src={InstagramIcon} alt="telegram-icon" width="12" height="12" />
               </a>
             </div>
