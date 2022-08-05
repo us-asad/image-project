@@ -1,3 +1,7 @@
+.numbers {
+  z-index: 10;
+}
+
 .numbers-header {
   display: flex;
   justify-content: center;

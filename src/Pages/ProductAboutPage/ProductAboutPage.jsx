@@ -2,8 +2,6 @@ import Footer from "../../Components/Footer/Footer";
 import WhiteNav from "../../Components/WhiteNav/WhiteNav";
 import "./ProductAboutPage.css";
 import { useEffect, useState } from "react";
-import Rating from "material-ui-rating/lib/components/Rating/Rating";
-import logo from '../../Assets/Img/logos.png'
 import { Link, useParams } from "react-router-dom";
 import Form from "../../Components/Form/From";
 import ModalWithBg from "../../Components/ModalWithBg/ModalWithBg";
@@ -16,6 +14,8 @@ const ProductAboutPage = () => {
   const [data, setData] = useState([]);
   const [product, setProduct] = useState({});
   const [openModal, setOpenModal] = useState(false);
+  const [colors, setColors] = useState([]);
+  const [selectedColor, setSelectedColor] = useState("");
   const params = useParams();
   const { t } = useTranslation();
 
@@ -33,8 +33,19 @@ const ProductAboutPage = () => {
   useEffect(() => {
     fetch(`https://api-baf.abba.uz/products/${params.id}/?format=json`)
       .then((res) => res.json())
-      .then((prd) => setProduct(prd));
+      .then((prd) => {
+        setProduct(prd);
+        const colors = Object
+          .entries(prd)
+          .filter(item => item[0].includes("color"))
+          .map(item => item[1])
+        setColors(colors);
+        setSelectedColor(colors[0]);
+      });
   }, [params]);
+
+  console.log(selectedColor)
+
 
   return (
     <div className="productaboutpage">
@@ -61,18 +72,24 @@ const ProductAboutPage = () => {
                 <AiFillStar key={i} style={{ color: "#E9A426", fontSize: "18px" }} />
               ))}
             </div>
-            <p className="font-mulish" style={{ color: "#5B8A8D" }}>{t("product_page_color")}</p>
-            <ul className="color-list">
-              <li className="color-item">
-                <span></span>
-              </li>
-              <li className="color-item">
-                <span></span>
-              </li>
-              <li className="color-item">
-                <span></span>
-              </li>
-            </ul>
+            {colors.length ? (
+              <>
+                <p className="font-mulish" style={{ color: "#5B8A8D" }}>{t("product_page_color")}</p>
+                <ul className="color-list">
+                  {colors.map(color => (
+                    <li
+                      key={color}
+                      className="color-item"
+                      style={{transform: `scale(${color !== selectedColor ? ".9" : "1.1"})`, borderColor: color !== selectedColor ? "#fff" : "#5a969c"}}
+                      onClick={() => setSelectedColor(color)}
+                    >
+                      {console.log(color, selectedColor)}
+                      <span style={{ background: color }}></span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
             <div className="info-flex">
               <p className="info-price">${product.cost}</p>
               <button
@@ -100,7 +117,7 @@ const ProductAboutPage = () => {
             {
               data && data.map((e, i) => (
                 <Link key={i} to={`/product/${e.id}`} className="info-card">
-                  <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
+                  <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
                     <div className="category-images">
                       <img src={e.image1} alt="" className="category-img" />
                     </div>
@@ -119,8 +136,8 @@ const ProductAboutPage = () => {
       <ModalWithBg open={openModal} toggleOpen={toggleModal}>
         <form action="" className="product-form">
           <h3 className="form-name product-form-title">{t("product_page_order_button")}</h3>
-          <input type="name" placeholder='Name' required className="form-input" />
-          <input type="tell " placeholder='Telefon nomer' required className="form-input" />
+          <input type="name" placeholder={t("product_page_name_input")} required className="form-input" />
+          <input type="tell " placeholder={t("product_page_tel_input")} required className="form-input" />
           <button className="form-btn">{t("product_page_button_name")}</button>
         </form>
       </ModalWithBg>

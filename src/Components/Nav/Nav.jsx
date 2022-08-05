@@ -10,6 +10,7 @@ import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { languages } from "../../data";
+import { BsTelephone } from "react-icons/bs";
 
 const customStyles = {
   content: {
@@ -133,7 +134,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div className="nav-right" onClick={toggleClass} >
+        <div className="nav-right" onClick={toggleClass} style={{ display: "flex", justifyContent: "space-between", gap: "60px" }}>
           <div className="volume">
             <div className="upper" onClick={play}>
               <img src={changeimg} alt="" />
@@ -154,61 +155,70 @@ const Nav = () => {
           <button onClick={openModal} className="nav-button">
             <img src={toggle} alt="" className="whitenav-toggle" />
           </button>
+          <div style={{ display: "flex", gap: "10px", color: "white" }} className="hidden-after-1000">
+            <span style={{ padding: "6px 8.5px", border: "1px solid #fff", borderRadius: "50%", display: "block" }}>
+              <BsTelephone style={{ fontSize: "18px", color: "white" }} />
+            </span>
+            <div style={{display: "flex", gap: "3px", flexDirection: "column"}}>
+              <p>99-929-39-32</p>
+              <p>12-332-32-12</p>
+            </div>
+          </div>
         </div>
-        <div className="whitenav-modal">
-          <Modal
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-          >
-            <ul className="navbars-list">
-              <button onClick={closeModal} className="close-menu">
-                &times;
-              </button>
-              <li className="navbar-item">
-                <a 
-                  href="/#products" 
-                  className="navbar-link"
-                  onClick={closeModal}
-                >
-                  {t("nav_item_1")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/about"
-                  className="navbar-link">
-                  {t("nav_item_2")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/#about" className="navbar-link">
-                  {t("nav_item_3")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/#contact" className="navbar-link">
-                  {t("nav_item_4")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <ol className="lang-list1">
-                  {languages.map(lang => (
-                    <li key={lang} className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
-                      <button
-                        className="lang-btn1"
-                        onClick={() => i18next.changeLanguage(lang)}
-                      >
-                        {lang}
-                      </button>
-                    </li>
-                  ))}
-                </ol>
-              </li>
-            </ul>
-          </Modal>
-        </div>
+      </div>
+      <div className="whitenav-modal">
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <ul className="navbars-list">
+            <button onClick={closeModal} className="close-menu">
+              &times;
+            </button>
+            <li className="navbar-item">
+              <a
+                href="/#products"
+                className="navbar-link"
+                onClick={closeModal}
+              >
+                {t("nav_item_1")}
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a onClick={closeModal} href="/about"
+                className="navbar-link">
+                {t("nav_item_2")}
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a onClick={closeModal} href="/#about" className="navbar-link">
+                {t("nav_item_3")}
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a onClick={closeModal} href="/#contact" className="navbar-link">
+                {t("nav_item_4")}
+              </a>
+            </li>
+            <li className="navbar-item">
+              <ol className="lang-list1">
+                {languages.map(lang => (
+                  <li key={lang} className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
+                    <button
+                      className="lang-btn1"
+                      onClick={() => i18next.changeLanguage(lang)}
+                    >
+                      {lang}
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </li>
+          </ul>
+        </Modal>
       </div>
     </nav>
   );

@@ -344,3 +344,15 @@ nav a:hover ~ .drop,
 .lang-item1:hover {
   opacity: 1;
 }
+
+.ReactModalPortal {
+  position: relative;
+  z-index: 1000;
+}
+
+
+@media (max-width: 1000px) {
+  .hidden-after-1000 {
+    display: none !important;
+  }
+}

@@ -23,6 +23,16 @@
   display: flex;
   align-items: center;
 }
+
+.color-item {
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.color-item:hover {
+  transform: scale(1.1) !important;
+}
+
 .color-item span {
   padding: 3px 10px;
   background: #f38db8;
@@ -75,15 +85,32 @@
   font-size: 10px;
   line-height: 22px;
   /* identical to box height, or 220% */
-  width: 125px;
-  height: 28px;
+  width: 122px;
+  height: 27px;
   border: none;
   color: #ffffff;
   margin-left: 25px;
   background: #5b8a8d;
   border-radius: 10px;
+  border: 2px solid #5b8a8d;
   cursor: pointer;
+  transition: all .3s;
 }
+
+.info-btn:hover {
+  color: #5b8a8d;
+  background: #e5e5e5;
+}
+
+.form-btn {
+  transition: all .3s;
+}
+
+.form-btn:hover {
+  color: #fff;
+  background: #5b8a8d;
+}
+
 .info-text {
   font-family: "Mulish";
   font-style: normal;

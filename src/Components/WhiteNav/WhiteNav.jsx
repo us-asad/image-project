@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { languages } from "../../data";
 import { Link } from "react-router-dom";
+import ReactAudioPlayer from "react-audio-player";
+import { BsTelephone } from "react-icons/bs";
 
 const customStyles = {
   content: {
@@ -123,27 +125,36 @@ const WhiteNav = () => {
             </li>
           </ul>
         </div>
-        <div className="whiteNav-right" onClick={toggleClass} >
+        <div className="nav-right" onClick={toggleClass} style={{ display: "flex", justifyContent: "space-between", gap: "60px" }}>
           <div className="volume">
             <div className="upper" onClick={play}>
               <img src={changeimg} alt="" />
-              {/* <ReactAudioPlayer
-                  src={music}
-                  ref={audio}
-                  autoPlay
-                  controls
-                  volume={volMusic}
-                  id={"ms"}
-                  style={{ display: "none" }}
-                /> */}
+              <ReactAudioPlayer
+                src="/music.mp3"
+                ref={audio}
+                // autoPlay
+                controls
+                volume={volMusic}
+                id={"ms"}
+                style={{ display: "none" }}
+              />
             </div>
             <input type="range"
-              className="whiteNav-range"
+              className="nav-range"
               onChange={change} name="" id="" />
           </div>
-          <button onClick={openModal} className="whitenav-button">
+          <button onClick={openModal} className="nav-button">
             <img src={toggle} alt="" className="whitenav-toggle" />
           </button>
+          <div style={{ display: "flex", gap: "10px", color: "#000" }} className="hidden-after-1000">
+            <span style={{ padding: "6px 8.5px", border: "1px solid #000", borderRadius: "50%", display: "block" }}>
+              <BsTelephone style={{ fontSize: "18px", color: "#000" }} />
+            </span>
+            <div style={{ display: "flex", gap: "3px", flexDirection: "column" }}>
+              <p>99-929-39-32</p>
+              <p>12-332-32-12</p>
+            </div>
+          </div>
         </div>
         <div className="whitenav-modal">
           <Modal
@@ -158,30 +169,30 @@ const WhiteNav = () => {
                 &times;
               </button>
               <li className="navbar-item">
-                <a onClick={closeModal}  href="/#products" className="navbar-link">
+                <a onClick={closeModal} href="/#products" className="navbar-link">
                   {t("nav_item_1")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a  onClick={closeModal} href="/about"
+                <a onClick={closeModal} href="/about"
                   className="navbar-link">
                   {t("nav_item_2")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a onClick={closeModal}  href="/#about" className="navbar-link">
+                <a onClick={closeModal} href="/#about" className="navbar-link">
                   {t("nav_item_3")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a onClick={closeModal}  href="/#contact" className="navbar-link">
+                <a onClick={closeModal} href="/#contact" className="navbar-link">
                   {t("nav_item_4")}
                 </a>
               </li>
               <li className="navbar-item">
                 <ol className="lang-list1">
                   {languages.map(lang => (
-                    <li className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
+                    <li key={lang} className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
                       <button
                         className="lang-btn1"
                         onClick={() => i18next.changeLanguage(lang)}

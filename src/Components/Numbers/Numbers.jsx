@@ -10,6 +10,7 @@ const Numbers = () => {
   const [start, setStart] = useState(0);
   const sectionRef = useRef(null);
   const { t } = useTranslation();
+  const imgRef = useRef();
 
   useEffect(() => {
     fetch("https://api-baf.abba.uz/infographics/?format=json")
@@ -35,6 +36,9 @@ const Numbers = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > sectionRef.current?.offsetHeight + 1200) {
         setStart(1);
+        setTimeout(() => {
+          imgRef.current.style.display = "none";          
+        }, 3000);
       }
     });
   }, []);
@@ -62,7 +66,7 @@ const Numbers = () => {
         </div>
         <div className="numbers-bottom">
           <div className="numbers-left">
-            <img src={leftImg} alt="" className="numbers-img" style={start ? { transform: "translateY(200%)" } : {}} />
+            <img ref={imgRef} src={leftImg} alt="" className="numbers-img" style={start ? { transform: "translateY(200%)" } : {}} />
           </div>
           <div className="numbers-right">
             <p className="numbers-text">
