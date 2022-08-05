@@ -143,6 +143,7 @@ body {
 .products-btn {
   transition: background-color 0.3s, color .3s;
   border-radius: 44.3128px;
+  cursor: pointer;
 }
 
 .product-btn {
