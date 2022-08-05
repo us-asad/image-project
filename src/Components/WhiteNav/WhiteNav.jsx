@@ -11,6 +11,7 @@ import { languages } from "../../data";
 import { Link } from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
 import { BsTelephone } from "react-icons/bs";
+import MobileNav from "../MobileNav/MobileNav";
 
 const customStyles = {
   content: {
@@ -28,28 +29,16 @@ const customStyles = {
 
 const WhiteNav = () => {
   const { t } = useTranslation();
-
-  //Modal
-
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   let audio = useRef();
   const [content, setContent] = useState(false);
   const [changeimg, setchangeimg] = useState("/img/nav/volumeUp.svg");
+  const [showNav, setShowNav] = useState(false);
+
+  const toggleNav = state => {
+    setShowNav(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
+  }
+
   const play = () => {
     if (changeimg === "/img/nav/volumeMute.svg") {
       setchangeimg("/img/nav/volumeUp.svg");
@@ -143,7 +132,7 @@ const WhiteNav = () => {
               className="nav-range"
               onChange={change} name="" id="" />
           </div>
-          <button onClick={openModal} className="nav-button">
+          <button onClick={() => toggleNav(true)} className="nav-button">
             <img src={toggle} alt="" className="whitenav-toggle" />
           </button>
           <div style={{ display: "flex", gap: "10px", color: "white", alignItems: "center" }} className="hidden-after-1000">
@@ -155,56 +144,7 @@ const WhiteNav = () => {
             </div>
           </div>
         </div>
-        <div className="whitenav-modal">
-          <Modal
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-          >
-            <ul className="navbars-list">
-              <button onClick={closeModal} className="close-menu">
-                &times;
-              </button>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/#products" className="navbar-link">
-                  {t("nav_item_1")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/about"
-                  className="navbar-link">
-                  {t("nav_item_2")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/#about" className="navbar-link">
-                  {t("nav_item_3")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a onClick={closeModal} href="/#contact" className="navbar-link">
-                  {t("nav_item_4")}
-                </a>
-              </li>
-              <li className="navbar-item">
-                <ol className="lang-list1">
-                  {languages.map(lang => (
-                    <li key={lang} className={`lang-item1 ${i18next.language === lang ? "active" : null}`}>
-                      <button
-                        className="lang-btn1"
-                        onClick={() => i18next.changeLanguage(lang)}
-                      >
-                        {lang}
-                      </button>
-                    </li>
-                  ))}
-                </ol>
-              </li>
-            </ul>
-          </Modal>
-        </div>
+        <MobileNav showNav={showNav} toggleNav={toggleNav} />
       </div>
     </nav>
   );

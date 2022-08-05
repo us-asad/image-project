@@ -26,6 +26,11 @@ code {
     monospace;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .hide {
   opacity: 0;
   pointer-events: none;
