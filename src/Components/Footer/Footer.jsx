@@ -6,6 +6,7 @@ import InstagramIcon from "../../Assets/Img/instagram-icon.svg"
 import EmailIcon from "../../Assets/Img/footer__email-line.svg"
 import Bottom from "./Bottom"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -16,9 +17,9 @@ const Footer = () => {
         <div className="footer__hero">
           <div className="footer__hero-top">
             <div className="footer__logo">
-              <a className="footer__logo-link" href="#">
+              <Link className="footer__logo-link" to="/">
                 <img src="/img/logo.png" className="nav-brand" alt="Site-logo" width="80" height="29" />
-              </a>
+              </Link>
             </div>
             <div className="hero__parent-link" style={{marginTop: "20px"}}>
               <div className="footer__hero-nav">

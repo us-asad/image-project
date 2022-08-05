@@ -8,6 +8,7 @@ import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { languages } from "../../data";
+import { Link } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -96,9 +97,9 @@ const WhiteNav = () => {
     <nav className="whiteNav">
       <div className="container">
         <div className="whiteNav-left">
-          <a href="/" className="whiteNav-logo">
-            <img src={greenLogo} alt="" className="whiteNav-brand" />
-          </a>
+          <Link to="/" className="whiteNav-logo">
+            <img src="/img/logo.png" alt="Baf" className="whiteNav-brand nav-brand" />
+          </Link>
           <ul className="whiteNav-list">
             <li className="whiteNav-item">
               <a href="/#products" className="whiteNav-link">

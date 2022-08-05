@@ -107,9 +107,9 @@ const Nav = () => {
     <nav className="nav">
       <div className="container">
         <div className="nav-left">
-          <a href="/" className="nav-logo">
+          <Link to="/" className="nav-logo">
             <img src="/img/logo.png" alt="" className="nav-brand" />
-          </a>
+          </Link>
           <ul className="nav-list">
             <li className="nav-item">
               <a href="/#products" className="nav-link">

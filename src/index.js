@@ -9,11 +9,13 @@ import "swiper/css/bundle";
 import "../src/Pages/ProductAboutPage/styles.css";
 import "swiper/css/bundle";
 import Loader from './Components/Loader/Loader';
+import ScrollToTop from './Components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Suspense fallback={Loader}>
     <BrowserRouter>
+      <ScrollToTop />
       <App />
     </BrowserRouter>
   </Suspense>

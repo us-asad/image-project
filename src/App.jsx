@@ -3,13 +3,14 @@ import HomePage from './Pages/HomePage/HomePage';
 import ProductPage from './Pages/ProductPage/ProductPage';
 import { Routes, Route } from 'react-router-dom';
 import ProductAboutPage from './Pages/ProductAboutPage/ProductAboutPage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import CompanyPage from './Pages/CompanyPage/CompanyPage';
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
+import i18next from 'i18next';
 
 i18n
   .use(initReactI18next)
@@ -28,7 +29,11 @@ i18n
   });
 
 function App() {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18next.changeLanguage("ru")
+  }, []);
 
   return (
     <div className="App">
