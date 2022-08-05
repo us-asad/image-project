@@ -164,6 +164,15 @@
   width: 210px;
   margin-left: 20px;
   height: 170px;
+  transition: all .5s;
+}
+
+.info-img:hover, .info-imgs:hover {
+  transform: scale(1.1);
+}
+
+.info__title div, .info__titles div {
+  overflow: hidden;
 }
 
 .info-imgs {
@@ -171,6 +180,7 @@
   height: 120px;
   margin-left: 25px;
   margin-top: 25px;
+  transition: all .5s;
 }
 
 .div {
@@ -254,5 +264,17 @@
     justify-content: center;
   }
 
+
+  .info-text {
+    width: auto
+  }
+}
+
+@media (max-width: 500px) {
+  .info-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
 

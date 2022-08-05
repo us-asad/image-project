@@ -89,11 +89,17 @@
   cursor: pointer;
 }
 
+.download-box:hover .download-blok {
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+}
+
 .download-blok {
   position: absolute;
-  top: 50%;
-  left: 14%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   background-color: #ffebe2;
   padding: 8px;
   width: 62px;
@@ -102,6 +108,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50px;
+  transition: width .3s;
 }
 .ytb-box {
   cursor: pointer;

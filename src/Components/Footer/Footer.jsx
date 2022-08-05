@@ -20,7 +20,7 @@ const Footer = () => {
                 <img src="/img/logo.png" className="nav-brand" alt="Site-logo" width="80" height="29" />
               </a>
             </div>
-            <div className="hero__parent-link">
+            <div className="hero__parent-link" style={{marginTop: "20px"}}>
               <div className="footer__hero-nav">
                 <a className="footer__nav-link" href="#">{t("footer_nav_item_1")}</a>
                 <a className="footer__nav-link" href="#">{t("footer_nav_item_2")}</a>

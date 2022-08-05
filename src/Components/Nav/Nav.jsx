@@ -112,7 +112,7 @@ const Nav = () => {
           </a>
           <ul className="nav-list">
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="/#products" className="nav-link">
                 {t("nav_item_1")}
               </a>
             </li>
@@ -122,12 +122,12 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="/#about" className="nav-link">
                 {t("nav_item_3")}
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="/#contact" className="nav-link">
                 {t("nav_item_4")}
               </a>
             </li>
@@ -168,23 +168,27 @@ const Nav = () => {
                 &times;
               </button>
               <li className="navbar-item">
-                <a href="#products" className="navbar-link">
+                <a 
+                  href="/#products" 
+                  className="navbar-link"
+                  onClick={closeModal}
+                >
                   {t("nav_item_1")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="#about"
+                <a onClick={closeModal} href="/about"
                   className="navbar-link">
                   {t("nav_item_2")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="#blogs" className="navbar-link">
+                <a onClick={closeModal} href="/#about" className="navbar-link">
                   {t("nav_item_3")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="#contact" className="navbar-link">
+                <a onClick={closeModal} href="/#contact" className="navbar-link">
                   {t("nav_item_4")}
                 </a>
               </li>

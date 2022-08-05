@@ -6,7 +6,7 @@ const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="qeusion">
+    <section className="qeusion" id="contact">
       <div className="container" style={{minWidth: "max-content"}}>
         <div className="qeusion__section">
           <div className="quesion__form">

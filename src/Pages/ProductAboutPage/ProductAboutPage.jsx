@@ -56,12 +56,12 @@ const ProductAboutPage = () => {
           </div>
           <div className="info-right">
             <h2 className="info-title">{product[`name_${i18next.language}`]}</h2>
-            <div style={{display: "flex", marginTop: "10px", marginBottom: "30px"}}>
+            <div style={{ display: "flex", marginTop: "10px", marginBottom: "30px" }}>
               {[...new Array(5)].map((_, i) => (
                 <AiFillStar key={i} style={{ color: "#E9A426", fontSize: "18px" }} />
               ))}
             </div>
-            <p className="font-mulish" style={{color: "#5B8A8D"}}>{t("product_page_color")}</p>
+            <p className="font-mulish" style={{ color: "#5B8A8D" }}>{t("product_page_color")}</p>
             <ul className="color-list">
               <li className="color-item">
                 <span></span>
@@ -100,13 +100,15 @@ const ProductAboutPage = () => {
             {
               data && data.map((e, i) => (
                 <Link key={i} to={`/product/${e.id}`} className="info-card">
-                  <div className="category-images">
-                    <img src={e.image1} alt="" className="category-img" />
-                  </div>
-                  <p className="category-text">{e[`name_${i18next.language}`]}</p>
-                  <div className="category-titles">
-                    <p className="category-numbers">$ {e.cost}<span>/m</span></p>
-                    <button className="category-button">{t("product_page_order_button")}</button>
+                  <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
+                    <div className="category-images">
+                      <img src={e.image1} alt="" className="category-img" />
+                    </div>
+                    <p className="category-text">{e[`name_${i18next.language}`]}</p>
+                    <div className="category-titles">
+                      <p className="category-numbers">$ {e.cost}<span>/m</span></p>
+                      <button className="category-button">{t("product_page_order_button")}</button>
+                    </div>
                   </div>
                 </Link>
               ))

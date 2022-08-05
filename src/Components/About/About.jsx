@@ -10,7 +10,7 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="container">
         <div className="about-left">
           <div className="about-img-box">

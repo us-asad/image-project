@@ -101,7 +101,7 @@ const WhiteNav = () => {
           </a>
           <ul className="whiteNav-list">
             <li className="whiteNav-item">
-              <a href="#" className="whiteNav-link">
+              <a href="/#products" className="whiteNav-link">
                 {t("nav_item_1")}
               </a>
             </li>
@@ -111,12 +111,12 @@ const WhiteNav = () => {
               </a>
             </li>
             <li className="whiteNav-item">
-              <a href="#" className="whiteNav-link">
+              <a href="/#about" className="whiteNav-link">
                 {t("nav_item_3")}
               </a>
             </li>
             <li className="whiteNav-item">
-              <a href="#" className="whiteNav-link">
+              <a href="/#contact" className="whiteNav-link">
                 {t("nav_item_4")}
               </a>
             </li>
@@ -157,23 +157,23 @@ const WhiteNav = () => {
                 &times;
               </button>
               <li className="navbar-item">
-                <a href="#products" className="navbar-link">
+                <a onClick={closeModal}  href="/#products" className="navbar-link">
                   {t("nav_item_1")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/about"
+                <a  onClick={closeModal} href="/about"
                   className="navbar-link">
                   {t("nav_item_2")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="#blogs" className="navbar-link">
+                <a onClick={closeModal}  href="/#about" className="navbar-link">
                   {t("nav_item_3")}
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="#contact" className="navbar-link">
+                <a onClick={closeModal}  href="/#contact" className="navbar-link">
                   {t("nav_item_4")}
                 </a>
               </li>

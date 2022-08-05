@@ -55,3 +55,17 @@
     top: 52%;
     left: 48%;
 }
+
+
+@media (max-width: 950px) {
+    .company .container {
+        flex-direction: column-reverse;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .company-left, .company-text {
+        width: 100%;
+    }
+}
