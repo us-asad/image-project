@@ -74,8 +74,6 @@ const Header = () => {
         <div className="iframe-container">
           {openYtModal && (
             <iframe
-              width="560"
-              height="315"
               src="https://www.youtube.com/embed/ng7D1a5cTIk"
               title="YouTube video player"
               frameBorder="0"

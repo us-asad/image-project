@@ -52,6 +52,7 @@ body {
 .products {
   padding: 120px 0;
   background: #feffff;
+  padding-top: 80px;
 }
 
 .products-title {
@@ -174,6 +175,13 @@ body {
 }
 
 
+@media (max-width: 525px) {
+  .swiper-slide.swiper-slide-duplicate.swiper-slide-active {
+    margin: 0 !important;
+  }
+}
+
+
 @media (max-width: 500px) {
   .info__title, .info-titles {
     width: 100% !important;
@@ -195,4 +203,6 @@ body {
     margin: 0 !important;
   }
 }
+
+
 

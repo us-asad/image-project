@@ -22,3 +22,36 @@
   background: rgba(23, 23, 23, 0.4);
   z-index: 19000;
 }
+
+.modal-close {
+  position: absolute;
+  top: -72px;
+  right: 3px;
+  font-size: 40px;
+  color: white;
+  background: #5b8a8d;
+  border: 3px solid #5b8a8d;
+  padding: 1.5px 3px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #fff;
+  color: #5b8a8d;
+}
+
+.modal-close:hover svg {
+  color: #5b8a8d !important;
+}
+
+
+@media (max-width: 700px) {
+  .modal-close {
+    font-size: 20px;
+    top: -50px;
+  }
+}

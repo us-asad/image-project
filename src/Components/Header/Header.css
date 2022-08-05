@@ -195,6 +195,32 @@
 }
 
 .iframe-container iframe {
+  width: 560px;
+  height: 315px;
+}
+
+.iframe-container iframe {
   border-radius: 10px;
+}
+
+@media (max-width: 668px) {
+  .iframe-container iframe {
+    width: 450px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 500px) {
+  .iframe-container iframe {
+    width: 350px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 375px) {
+  .iframe-container iframe {
+    width: 250px;
+    height: 130px;
+  }
 }
 

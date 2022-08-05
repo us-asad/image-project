@@ -35,11 +35,6 @@
   text-transform: uppercase;
   margin: 35px 0;
   color: #ffffff;
-  max-height: 240px;
-  text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
-
   width: 320px;
 }
 
