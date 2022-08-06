@@ -8,7 +8,7 @@ html {
   font-family: "PFBeauSansPro-Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("PFBeauSansPro-Bold"), url("../public/fonts/UFONTS.COM_PFBEAUSANSPRO-BOLD.woff") format("woff");
+  src: local("PFBeauSansPro-Bold"), url("../public/fonts/PFBeauSansPro-Bbook.woff2") format("woff2");
 }
 
 body {
@@ -94,6 +94,14 @@ a {
 
 .faq_list__item {
   padding-right: 0 !important;
+}
+
+.splide__arrow--prev {
+  left: -31px !important;
+}
+
+.splide__arrow--next {
+  right: -31px !important;
 }
 
 

@@ -27,12 +27,7 @@
   line-height: 18px;
   margin-bottom: 50px;
   color: #5b8a8d;
-  height: 42px;
   padding: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  /* background-color: red; */
-  overflow: hidden;
   width: 390px;
 }
 
@@ -143,12 +138,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 25px;
-  /* background-color: red; */
-  max-height: 129px;
-  text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
-
   text-transform: uppercase;
   width: 540px;
   margin-left: 420px;

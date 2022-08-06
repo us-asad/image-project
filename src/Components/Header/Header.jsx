@@ -16,7 +16,6 @@ const Header = () => {
   const { t } = useTranslation();
   const downRef = useRef();
   const aRef = useRef();
-  const [clicked, setClicked] = useState(false);
 
   const toggleYtModal = state => {
     setOpenYtModal(state);

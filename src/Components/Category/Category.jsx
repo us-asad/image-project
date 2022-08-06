@@ -49,7 +49,7 @@ const Category = ({ categoryPage }) => {
           </div>
           <details className="details-category" onToggle={(e) => setOpenDetails(e.target.open)} open={openDetails}>
             <summary style={{marginBottom: openDetails ? "30px" : "30px", display: "block"}}>
-              <span>Show Categories</span>
+              <span>{categories.find(({ id }) => id == params.id) && categories.find(({ id }) => id == params.id)[`name_${i18next.language}`]}</span>
               <FaChevronDown style={{transform: `rotate(${openDetails ? "-180" : "0"}deg)`}} />
             </summary>
             <div className="details">

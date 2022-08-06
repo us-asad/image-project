@@ -43,7 +43,7 @@ const Numbers = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="numbers">
+    <section ref={sectionRef} className="numbers" id="numbers">
       <div className="container">
         <div className="numbers-header">
           <h2 className="numbers-title">{t("home_page_numbers_title")}</h2>
@@ -68,7 +68,7 @@ const Numbers = () => {
             <img ref={imgRef} src={leftImg} alt="" className="numbers-img" style={start ? { transform: "translateY(200%)" } : {}} />
           </div>
           <div className="numbers-right">
-            <p className="numbers-text">
+            <p className="numbers-text" style={{fontSize: "14px"}}>
               {data.length ? data[activeNumIdx][`description_${i18next.language}`] : null}
             </p>
             <div>

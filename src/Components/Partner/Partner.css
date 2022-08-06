@@ -38,10 +38,6 @@
     text-align: center;
     color: #5B8A8D;
     margin: 0 auto;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
-    height: 40px;
     width: 220px;
 }
 .splides-top{

@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className="about-medium">
           <h2 className="about-title">{t("home_page_about_title")}</h2>
-          <p className="about-text">{t("home_page_about_text_1")}</p>
+          <p className="about-text font-pfb">{t("home_page_about_text_1")}</p>
           <p className="about-subtext">{t("home_page_about_text_2")}</p>
           <Link to="/about">
             <button className="about-btn">

@@ -148,7 +148,7 @@ const Nav = () => {
               <BsTelephone style={{ fontSize: "14px", color: "white" }} />
             </span>
             <div style={{display: "flex", gap: "3px", flexDirection: "column"}}>
-              <p>+998 99 708-00-80</p>
+              <a href="tel:+998997080080" style={{width: "max-content", cursor: "pointer"}}>+998 99 708-00-80</a>
             </div>
           </div>
         </div>

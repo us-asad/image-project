@@ -1,15 +1,21 @@
 import "./Footer.css"
-import FooterLogo from "../../Assets/Img/footer-logo.svg"
-import TelegramIcon from "../../Assets/Img/telegram-icon.svg"
 import FacebookIcon from "../../Assets/Img/facebook-icon.svg"
 import InstagramIcon from "../../Assets/Img/instagram-icon.svg"
 import EmailIcon from "../../Assets/Img/footer__email-line.svg"
 import Bottom from "./Bottom"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import ModalWithBg from "../ModalWithBg/ModalWithBg"
 
 const Footer = () => {
+  const [openYtModal, setOpenYtModal] = useState(false);
   const { t } = useTranslation();
+
+  const toggleYtModal = state => {
+    setOpenYtModal(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
+  }
 
   return (
     <>
@@ -23,14 +29,14 @@ const Footer = () => {
             </div>
             <div className="hero__parent-link" style={{marginTop: "20px"}}>
               <div className="footer__hero-nav">
-                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_1")}</Link>
-                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_2")}</Link>
-                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_3")}</Link>
+                <a className="footer__nav-link" href="/about">{t("footer_nav_item_1")}</a>
+                <button style={{background: "transparent", border: "0", outline: "0", cursor: "pointer"}} className="footer__nav-link" onClick={() => toggleYtModal(true)}>{t("footer_nav_item_2")}</button>
+                <a className="footer__nav-link" href="/#products">{t("footer_nav_item_3")}</a>
               </div>
               <div className="footer__hero-nav">
-                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_4")}</Link>
-                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_5")}</Link>
-                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_6")}</Link>
+                <a className="footer__nav-link" href="/#products">{t("footer_nav_item_4")}</a>
+                <a className="footer__nav-link" href="/#numbers">{t("footer_nav_item_5")}</a>
+                <a className="footer__nav-link" href="/#">{t("footer_nav_item_6")}</a>
               </div>
             </div>
             <form className="footer__hero-form" action="#">
@@ -66,6 +72,19 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <ModalWithBg open={openYtModal} toggleOpen={toggleYtModal}>
+        <div className="iframe-container">
+          {openYtModal && (
+            <iframe
+              src="https://www.youtube.com/embed/ng7D1a5cTIk"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
+        </div>
+      </ModalWithBg>
       <Bottom />
     </>
   )

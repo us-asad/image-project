@@ -99,12 +99,13 @@ body {
 }
 
 .splide-header .splide-img {
-  height: 213px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   position: absolute;
   top: 21.7%;
   left: 0;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .splide-header .splide-img:hover {
@@ -142,7 +143,7 @@ body {
 }
 
 .products-btn {
-  transition: background-color 0.3s, color .3s;
+  transition: background-color 0.3s, color 0.3s;
   border-radius: 44.3128px;
   cursor: pointer;
 }
@@ -174,16 +175,15 @@ body {
   padding: 8px 45px;
 }
 
-
 @media (max-width: 525px) {
   .swiper-slide.swiper-slide-duplicate.swiper-slide-active {
     margin: 0 !important;
   }
 }
 
-
 @media (max-width: 500px) {
-  .info__title, .info-titles {
+  .info__title,
+  .info-titles {
     width: 100% !important;
   }
 
@@ -191,12 +191,13 @@ body {
     width: 100%;
     margin: 0;
   }
-  
+
   .info__title .div:last-child {
     margin-top: 10px;
   }
 
-  .info__title .info-imgs, .info-titles img {
+  .info__title .info-imgs,
+  .info-titles img {
     width: 100%;
     height: 100%;
     object-fit: contain;

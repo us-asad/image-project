@@ -21,10 +21,6 @@
   line-height: 44px;
   color: #ffffff;
   width: 205px;
-  max-height: 129px;
-  text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
 }
 
 .about-text {
@@ -47,10 +43,6 @@
   margin: 25px 0;
   margin-top: 15px;
   color: #ffffff;
-  max-height: 240px;
-  text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
 
   width: 320px;
 }

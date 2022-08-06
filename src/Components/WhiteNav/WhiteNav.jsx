@@ -136,11 +136,11 @@ const WhiteNav = () => {
             <img src={toggle} alt="" className="whitenav-toggle" />
           </button>
           <div style={{ display: "flex", gap: "10px", color: "white", alignItems: "center" }} className="hidden-after-1000">
-            <span style={{ padding: "4.5px 5.5px", border: "1px solid #fff", borderRadius: "50%", display: "grid", placeContent: "center" }}>
-              <BsTelephone style={{ fontSize: "14px", color: "white" }} />
+            <span style={{ padding: "4.5px 5.5px", border: "1px solid #5b8a8d", borderRadius: "50%", display: "grid", placeContent: "center" }}>
+              <BsTelephone style={{ fontSize: "14px", color: "#5b8a8d" }} />
             </span>
             <div style={{display: "flex", gap: "3px", flexDirection: "column"}}>
-              <p>+998 99 708-00-80</p>
+              <a href="tel:+998997080080" style={{width: "max-content", color: "#5b8a8d", cursor: "pointer"}}>+998 99 708-00-80</a>
             </div>
           </div>
         </div>

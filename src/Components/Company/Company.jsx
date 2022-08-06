@@ -14,7 +14,7 @@ const Company = () => {
         <div className="company-left">
           <h3 className="company-name">{t("about_page_title")}</h3>
           <p className="company-text font-pfb" style={{fontFamily: "sans-serif"}}>{t("about_page_text_1")}</p>
-          <p className="company-text" style={{fontFamily: "sans-serif"}}>{t("about_page_text_2")}</p>
+          <p className="company-text font-pfb" style={{fontFamily: "sans-serif"}}>{t("about_page_text_2")}</p>
         </div>
         <div className="company-right">
             <div className="company-div">

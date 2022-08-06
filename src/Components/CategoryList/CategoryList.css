@@ -84,10 +84,6 @@ line-height: 16px;
 color: #5B8A8D;
 text-align: center;
  
- height: 33px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
 
     width: 80px;
 }

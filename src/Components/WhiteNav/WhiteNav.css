@@ -1,7 +1,7 @@
 .whiteNav {
   padding: 25px 0;
   padding-right: 55px;
-  background: #e4e7e6;
+  background: #E2E9E7;
 }
 .whiteNav-left,
 .whiteNav .container,
@@ -33,6 +33,7 @@
 }
 .whiteNav-list {
   padding-left: 105px;
+  width: max-content !important;
 }
 
 .whiteNav-link:hover {

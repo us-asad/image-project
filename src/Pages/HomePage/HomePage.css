@@ -326,12 +326,7 @@
   }
 
   .header-title {
-    height: 123px;
     width: 370px;
-    max-height: 123px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
     z-index: 11;
     font-size: 34px;
     /* background-color: red; */
@@ -339,10 +334,6 @@
 
   .header-text {
     width: 389px;
-    max-height: 50px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
     z-index: 11;
     padding: 11px 0;
   }
@@ -542,11 +533,6 @@
     font-size: 50px;
     width: 400px;
     /* background-color: red; */
-    max-height: 100px;
-    height: 90px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
   }
   .numbers-left {
     display: none;
@@ -572,10 +558,6 @@
     margin-left: 0;
   }
   .tour-titles {
-    height: 100px;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    overflow: hidden;
     /* background-color: red;     */
     width: 336px;
     text-align: center;

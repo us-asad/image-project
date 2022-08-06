@@ -367,3 +367,9 @@ nav a:hover ~ .drop,
     height: 30px;
   }
 }
+
+
+.nav-list {
+  width: max-content;
+}
+
