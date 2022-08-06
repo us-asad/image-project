@@ -40,14 +40,14 @@ const Products = () => {
           </h2>
           <div className="products-btns">
             <button
-              className={`products-btn ${getPrds ? "product-btn" : "uslugi-btn"}`}
+              className={`products-btn prd-btn-1 ${getPrds ? "product-btn" : "uslugi-btn"}`}
               onClick={() => setGetPrds(1)}
-              style={{marginTop: "0", marginBottom: "20px"}}
+              style={{marginTop: "0", marginBottom: "0px"}}
             >
               {t("home_page_categories_name")}
             </button>
             <button
-              className={`products-btn ${getPrds ? "uslugi-btn" : "product-btn"}`}
+              className={`products-btn prd-btn-2 ${getPrds ? "uslugi-btn" : "product-btn"}`}
               onClick={() => setGetPrds(0)}
               style={{marginTop: "0"}}
             >
