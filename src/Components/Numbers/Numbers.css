@@ -80,8 +80,34 @@
   left: 10.8%;
 }
 .numbers-right {
-  width: 60%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
 }
+
+.numbers-right div {
+  align-items: center;
+}
+
+.numbers-right button {
+  padding: 7px;
+  padding-left: 9px;
+  border-radius: 50%;
+  background: #6A9799;
+  border: 2px solid #6A9799;
+  color: #fff;
+  font-size: 25px;
+  display: grid;
+  place-content: center;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.numbers-right button:hover {
+  background: transparent;
+  color: #6A9799;
+}
+
 
 .numbers-closer {
   font-style: normal;

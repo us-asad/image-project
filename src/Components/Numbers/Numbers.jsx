@@ -3,6 +3,8 @@ import leftImg from "../../Assets/Img/number1.png"
 import { useRef, useState } from "react"
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { BsChevronRight } from "react-icons/bs";
+import i18next from "i18next";
 
 const Numbers = () => {
   const [data, setData] = useState([]);
@@ -34,7 +36,7 @@ const Numbers = () => {
       if (window.scrollY > sectionRef.current?.offsetHeight + 1200) {
         setStart(1);
         setTimeout(() => {
-          imgRef.current.style.display = "none";          
+          imgRef.current.style.display = "none";
         }, 3000);
       }
     });
@@ -67,8 +69,13 @@ const Numbers = () => {
           </div>
           <div className="numbers-right">
             <p className="numbers-text">
-              {data.length ? data[activeNumIdx]?.description_en : null}
+              {data.length ? data[activeNumIdx][`description_${i18next.language}`] : null}
             </p>
+            <div>
+              <button onClick={() => setActiveNumIdx(prev => prev + 2 > data.length ? 0 : prev + 1)}>
+                <BsChevronRight />
+              </button>
+            </div>
           </div>
         </div>
       </div>
