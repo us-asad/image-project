@@ -23,14 +23,14 @@ const Footer = () => {
             </div>
             <div className="hero__parent-link" style={{marginTop: "20px"}}>
               <div className="footer__hero-nav">
-                <a className="footer__nav-link" href="#">{t("footer_nav_item_1")}</a>
-                <a className="footer__nav-link" href="#">{t("footer_nav_item_2")}</a>
-                <a className="footer__nav-link" href="#">{t("footer_nav_item_3")}</a>
+                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_1")}</Link>
+                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_2")}</Link>
+                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_3")}</Link>
               </div>
               <div className="footer__hero-nav">
-                <a className="footer__nav-link" href="#">{t("footer_nav_item_4")}</a>
-                <a className="footer__nav-link" href="#">{t("footer_nav_item_5")}</a>
-                <a className="footer__nav-link" href="#">{t("footer_nav_item_6")}</a>
+                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_4")}</Link>
+                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_5")}</Link>
+                <Link className="footer__nav-link" to="/#">{t("footer_nav_item_6")}</Link>
               </div>
             </div>
             <form className="footer__hero-form" action="#">
