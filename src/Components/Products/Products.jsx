@@ -56,10 +56,10 @@ const Products = () => {
           </div>
         </div>
         <div className="products-slider">
-          <Swiper slidesPerView={4} spaceBetween={30} slidesPerGroup={4} loop={true} loopFillGroupWithBlank={true}
+          <Swiper slidesPerView={4} loop={true} 
             navigation={true} modules={[Pagination, Navigation]} className="mySwiper">
             {
-              data && data.map((e, i) => (
+              data.length ? [...data, ...data, ...data, ...data, ...data, ...data, ...data, ...data].map((e, i) => (
                 <SwiperSlide key={i}>
                   <Link to={`/${getPrds ? "category" : "services"}/${e.id}`} >
                     <div className="splide-header">
@@ -69,7 +69,7 @@ const Products = () => {
                       {e[`name_${i18next.language}`]} </h2>
                   </Link>
                 </SwiperSlide>
-              ))
+              )) : null
             }
             {/*
               <SwiperSlide>

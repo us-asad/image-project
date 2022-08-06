@@ -93,24 +93,24 @@ const WhiteNav = () => {
           </Link>
           <ul className="whiteNav-list">
             <li className="whiteNav-item">
-              <a href="/#products" className="whiteNav-link">
+              <Link to="/#products" className="whiteNav-link">
                 {t("nav_item_1")}
-              </a>
+              </Link>
             </li>
             <li className="whiteNav-item">
-              <a href="/about" className="whiteNav-link">
+              <Link to="/about" className="whiteNav-link">
                 {t("nav_item_2")}
-              </a>
+              </Link>
             </li>
             <li className="whiteNav-item">
-              <a href="/#about" className="whiteNav-link">
+              <Link to="/#about" className="whiteNav-link">
                 {t("nav_item_3")}
-              </a>
+              </Link>
             </li>
             <li className="whiteNav-item">
-              <a href="/#contact" className="whiteNav-link">
+              <Link to="/#contact" className="whiteNav-link">
                 {t("nav_item_4")}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
