@@ -16,6 +16,7 @@ const Header = () => {
   const { t } = useTranslation();
   const downRef = useRef();
   const aRef = useRef();
+  const [downed, setDowned] = useState(false);
 
   const toggleYtModal = state => {
     setOpenYtModal(state);
@@ -43,20 +44,23 @@ const Header = () => {
             event.target.style.paddingLeft = (value * 100) + '%'
             event.target.setAttribute('data-value', value.toFixed(2));
 
-            console.log(downRef.current.attributes)
-            if (parseFloat(downRef.current?.style.paddingLeft) > parseFloat("73%")) {
-              // aRef.current.href = down;
-              // aRef.current.download = "Baftex";
-              // setTimeout(() => {
-              //   aRef.current.click();
-              //   console.log("A")
-              //   downRef.current.style.paddingLeft = "0%";
-              // }, 1);
+            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("73%")) {
+              console.log(parseFloat(downRef.current?.style.paddingLeft))
+              aRef.current.href = down;
+              aRef.current.download = "Baftex";
+              setDowned(prev => {
+                if (!prev) {
+                  aRef.current.click();
+                }
+
+                return true
+              })
+              downRef.current.style.paddingLeft = "0%";
             } else {
-              // setTimeout(() => {
-              //   // aRef.current.href = "";
-              //   // aRef.current.download = null;
-              // }, 1);
+              setTimeout(() => {
+                downRef.current.style.paddingLeft = "0%";
+                setDowned(false);
+              }, 1000);
             }
           }
         }
@@ -70,7 +74,8 @@ const Header = () => {
           <h1 className="header-title">{t("home_page_title")}</h1>
           <p className="header-text">{t("home_page_subtitle")}</p>
           <div className="header-btns">
-            <a ref={aRef} className="download-box">
+            <a ref={aRef} hidden></a>
+            <div className="download-box">
               {/* href={down} download  */}
               <div className="download-btn">
                 {t("home_page_download")}
@@ -80,7 +85,7 @@ const Header = () => {
                   <img src={downloadIcon} alt="" className="download-icon" />
                 </div>
               </div>
-            </a>
+            </div>
             <div className="ytb-box">
               <button
                 className="ytb-btn"
