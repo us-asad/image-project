@@ -45,11 +45,11 @@
 }
 
 nav .volume img {
-  width: 1vw;
+  width: 15px;
 }
 nav .volume .upper {
-  width: 2.3vw;
-  height: 2.3vw;
+  width: 35px;
+  height: 35px;
   background: #1d454a;
   padding: 5px;
   display: flex;
@@ -354,5 +354,16 @@ nav a:hover ~ .drop,
 @media (max-width: 1000px) {
   .hidden-after-1000 {
     display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  nav .volume img {
+    width: 12px;
+  }
+
+  nav .volume .upper {
+    width: 30px;
+    height: 30px;
   }
 }

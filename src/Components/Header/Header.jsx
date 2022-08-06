@@ -5,7 +5,7 @@ import downloadIcon from "../../Assets/Img/Group5.svg"
 import ytbIcon from "../../Assets/Img/Shape.svg";
 import headerBg from "../../Assets/Img/bg1.png";
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ModalWithBg from "../ModalWithBg/ModalWithBg";
 import i18next from "i18next";
 import { languages } from "../../data";
@@ -14,11 +14,55 @@ import interact from "interactjs";
 const Header = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
   const { t } = useTranslation();
+  const downRef = useRef();
+  const aRef = useRef();
+  const [clicked, setClicked] = useState(false);
 
   const toggleYtModal = state => {
     setOpenYtModal(state);
     document.body.style.overflow = state ? "hidden" : "auto";
   }
+
+  useEffect(() => {
+    const btn = interact('#down-btn');
+
+    btn
+      .draggable({                        // make the element fire drag events
+        origin: 'self',                   // (0, 0) will be the element's top-left
+        inertia: true,                    // start inertial movement if thrown
+        modifiers: [
+          interact.modifiers.restrict({
+            restriction: 'self'           // keep the drag coords within the element
+          })
+        ],
+        // Step 3
+        listeners: {
+          move(event) {                  // call this listener on every dragmove
+            const sliderWidth = interact.getElementRect(event.target).width
+            const value = event.pageX / sliderWidth
+
+            event.target.style.paddingLeft = (value * 100) + '%'
+            event.target.setAttribute('data-value', value.toFixed(2));
+
+            console.log(downRef.current.attributes)
+            if (parseFloat(downRef.current?.style.paddingLeft) > parseFloat("73%")) {
+              // aRef.current.href = down;
+              // aRef.current.download = "Baftex";
+              // setTimeout(() => {
+              //   aRef.current.click();
+              //   console.log("A")
+              //   downRef.current.style.paddingLeft = "0%";
+              // }, 1);
+            } else {
+              // setTimeout(() => {
+              //   // aRef.current.href = "";
+              //   // aRef.current.download = null;
+              // }, 1);
+            }
+          }
+        }
+      })
+  }, []);
 
   return (
     <header className="header">
@@ -27,12 +71,12 @@ const Header = () => {
           <h1 className="header-title">{t("home_page_title")}</h1>
           <p className="header-text">{t("home_page_subtitle")}</p>
           <div className="header-btns">
-            <a href={down} download className="download-box">
+            <a ref={aRef} className="download-box">
               {/* href={down} download  */}
               <div className="download-btn">
                 {t("home_page_download")}
               </div>
-              <div id="down-btn">
+              <div ref={downRef} id="down-btn">
                 <div className="download-blok">
                   <img src={downloadIcon} alt="" className="download-icon" />
                 </div>

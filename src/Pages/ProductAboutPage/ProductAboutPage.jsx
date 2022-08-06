@@ -44,9 +44,6 @@ const ProductAboutPage = () => {
       });
   }, [params]);
 
-  console.log(selectedColor)
-
-
   return (
     <div className="productaboutpage">
       <WhiteNav />
@@ -83,7 +80,6 @@ const ProductAboutPage = () => {
                       style={{transform: `scale(${color !== selectedColor ? ".9" : "1.1"})`, borderColor: color !== selectedColor ? "#fff" : "#5a969c"}}
                       onClick={() => setSelectedColor(color)}
                     >
-                      {console.log(color, selectedColor)}
                       <span style={{ background: color }}></span>
                     </li>
                   ))}

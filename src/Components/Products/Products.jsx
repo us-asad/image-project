@@ -42,12 +42,14 @@ const Products = () => {
             <button
               className={`products-btn ${getPrds ? "product-btn" : "uslugi-btn"}`}
               onClick={() => setGetPrds(1)}
+              style={{marginTop: "0", marginBottom: "20px"}}
             >
               {t("home_page_categories_name")}
             </button>
             <button
               className={`products-btn ${getPrds ? "uslugi-btn" : "product-btn"}`}
               onClick={() => setGetPrds(0)}
+              style={{marginTop: "0"}}
             >
               {t("home_page_services_name")}
             </button>
@@ -64,7 +66,6 @@ const Products = () => {
                       <img src={e.image} alt="" className="splide-img" />
                     </div>
                     <h2 className="splide-title">
-                     { console.log(e[`name_${i18next.language}`])}
                       {e[`name_${i18next.language}`]} </h2>
                   </Link>
                 </SwiperSlide>
