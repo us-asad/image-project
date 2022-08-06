@@ -780,10 +780,6 @@ border: 1px solid #FFFFFF; */
     width: 200px;
   }
 
-  nav .volume img {
-    width: 2vw;
-  }
-
   .header-text {
     font-size: 14px;
     font-style: normal;
@@ -796,11 +792,6 @@ border: 1px solid #FFFFFF; */
     margin-top: 22px;
     letter-spacing: 0.2px;
     /* background-color: yellow; */
-  }
-
-  nav .volume .upper {
-    width: 5.3vw;
-    height: 5.3vw;
   }
 
   .nav-right {
