@@ -83,11 +83,7 @@ const Category = ({ categoryPage }) => {
                     </div>
                     <p className="category-text">{e[`name_${i18next.language}`]}</p>
                     <div className="category-titles">
-                      <p className="category-numbers">
-                        $ {e.cost}
-                        <span>/m</span>
-                      </p>
-                      <button className="category-button">{t("product_page_order_button")}</button>
+                      <button style={{width: "100%", margin: "0", borderRadius: "15px"}} className="category-button">{t("product_page_order_button")}</button>
                     </div>
                   </Link>
                 )) : <h2>{t("product_page_no_products")}</h2>}

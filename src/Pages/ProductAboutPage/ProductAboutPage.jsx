@@ -87,10 +87,10 @@ const ProductAboutPage = () => {
               </>
             ) : null}
             <div className="info-flex">
-              <p className="info-price">${product.cost}</p>
               <button
                 className="info-btn"
                 onClick={() => toggleModal(true)}
+                style={{margin: "0", borderRadius: "15px"}}
               >{t("product_page_order_button")}</button>
             </div>
             <div className="info-text">
@@ -118,9 +118,8 @@ const ProductAboutPage = () => {
                       <img src={e.image1} alt="" className="category-img" />
                     </div>
                     <p className="category-text">{e[`name_${i18next.language}`]}</p>
-                    <div className="category-titles">
-                      <p className="category-numbers">$ {e.cost}<span>/m</span></p>
-                      <button className="category-button">{t("product_page_order_button")}</button>
+                    <div className="category-titles" style={{width: "100%"}}>
+                      <button style={{width: "100%", margin: "0", borderRadius: "15px"}} className="category-button">{t("product_page_order_button")}</button>
                     </div>
                   </div>
                 </Link>
