@@ -89,13 +89,13 @@
   align-items: center;
 }
 
-.numbers-right button {
+.numbers-right button, .splide__arrow {
   padding: 7px;
   padding-left: 9px;
   border-radius: 50%;
-  background: #6A9799;
-  border: 2px solid #6A9799;
-  color: #fff;
+  background: #6A9799 !important;
+  border: 2px solid #6A9799 !important;
+  color: #fff !important;
   font-size: 25px;
   display: grid;
   place-content: center;
@@ -103,9 +103,18 @@
   cursor: pointer;
 }
 
-.numbers-right button:hover {
-  background: transparent;
+.splide__arrow svg {
+  fill: #fff !important;
+  transition: all .3s;
+}
+
+.numbers-right button:hover, .splide__arrow:hover {
+  background: transparent !important;
   color: #6A9799;
+}
+
+.splide__arrow svg:hover {
+  fill: #6A9799 !important;
 }
 
 

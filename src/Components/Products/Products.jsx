@@ -8,7 +8,8 @@ import { Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
-import { SplideSlide, Splide } from "@splidejs/react-splide";
+import { SplideSlide, Splide, SplideTrack } from "@splidejs/react-splide";
+import { BsChevronRight } from "react-icons/bs";
 
 const splide_options = {
   perPage: 4,
@@ -69,20 +70,40 @@ const Products = () => {
           </div>
         </div>
         <div className="products-slider">
-          <Splide options={splide_options}>
-            {
-              [...data, ...data].map((e, i) => (
-                <SplideSlide key={i}>
-                  <Link to={`/${getPrds ? "category" : "services"}/${e.id}`} >
-                    <div className="splide-header">
-                      <img src={e.image} alt="" className="splide-img" />
-                    </div>
-                    <h2 className="splide-title">
-                      {e[`name_${i18next.language}`]} </h2>
-                  </Link>
-                </SplideSlide>
-              ))
-            }
+          <Splide options={splide_options} hasTrack={false}>
+            <div className={`splide__arrows splide__arrows--ltr`}>
+              <button
+                className="splide__arrow splide__arrow--prev !opacity-100 left-0"
+                type="button"
+                aria-label="Previous slide"
+                aria-controls="splide01-track"
+              >
+                <BsChevronRight />
+              </button>
+              <button
+                className="splide__arrow splide__arrow--next !opacity-100 right-0"
+                type="button"
+                aria-label="Next slide"
+                aria-controls="splide1-track"
+              >
+                <BsChevronRight />
+              </button>
+            </div>
+            <SplideTrack>
+              {
+                [...data, ...data].map((e, i) => (
+                  <SplideSlide key={i}>
+                    <Link to={`/${getPrds ? "category" : "services"}/${e.id}`} >
+                      <div className="splide-header">
+                        <img src={e.image} alt="" className="splide-img" />
+                      </div>
+                      <h2 className="splide-title">
+                        {e[`name_${i18next.language}`]} </h2>
+                    </Link>
+                  </SplideSlide>
+                ))
+              }
+            </SplideTrack>
           </Splide>
         </div>
       </div>
