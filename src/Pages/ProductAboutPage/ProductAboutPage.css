@@ -261,6 +261,11 @@
   margin: 0;
 }
 
+.category-box {
+  width: 150px;
+  margin: auto;
+}
+
 
 @media (max-width: 800px) {
   .info .container {
