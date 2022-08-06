@@ -76,13 +76,7 @@
     align-items: center;
     width: 200px;
   }
-  .whiteNav .container .volume .upper {
-    width: 5.3vw;
-    height: 5.3vw;
-  }
-  .whiteNav .container .volume img {
-    width: 2.5vw;
-  }
+  
   .whiteNav .container .volume input[type="range"] {
     overflow: hidden;
     width: 60px;
