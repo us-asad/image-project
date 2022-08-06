@@ -40,12 +40,7 @@
   text-decoration: underline;
 }
 
-.whiteNav .volume img {
-  width: 1vw;
-}
 .whiteNav .volume .upper {
-  width: 2.3vw;
-  height: 2.3vw;
   background: #1d454a;
   padding: 5px;
   display: flex;
@@ -435,4 +430,30 @@
 .burger-menu {
   background-color: transparent;
   box-shadow: none;
+}
+
+.whiteNav nav .volume img {
+  width: 12px;
+}
+
+.whiteNav .volume .nav-range {
+  margin-left: 20px !important;
+}
+
+.whiteNav nav .volume .upper {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+@media (max-width: 800px) {
+  .whiteNav nav .volume img {
+    width: 12px;
+  }
+
+  .whiteNav nav .volume .upper {
+    width: 30px;
+    height: 30px;
+  }
 }
