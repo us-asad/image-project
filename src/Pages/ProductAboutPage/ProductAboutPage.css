@@ -247,10 +247,11 @@
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  gap: 30px;
 }
 
 .info-card {
-  margin: 0 30px;
+  width: 200px;
 }
 
 .product-form {

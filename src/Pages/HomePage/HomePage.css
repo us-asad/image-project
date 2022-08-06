@@ -22,9 +22,7 @@
 @media (max-width: 1290px) {
   .container {
     width: 1170px;
-
     padding: 0 25px;
-    padding-right: 55px;
   }
 
   .nav-right {

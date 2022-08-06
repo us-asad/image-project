@@ -87,3 +87,20 @@ a {
     transform: rotate(360deg);
   }
 }
+
+.details, .details .faq_list, .details .faq_list > a, .details .faq_list__item__question_wrapper {
+  width: 100% !important;
+}
+
+.faq_list__item {
+  padding-right: 0 !important;
+}
+
+
+
+@media (max-width: 450px) {
+  .category-right {
+    width: 100% !important;
+  }
+}
+

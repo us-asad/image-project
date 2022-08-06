@@ -1,8 +1,6 @@
 .category {
   padding: 60px 0px 100px 0;
-
 }
-
 
 .details-category {
   display: none;
@@ -116,7 +114,7 @@
 .category-img {
   width: 130px;
   height: 140px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 .category-numbers {
   font-family: "Mulish";
@@ -159,7 +157,7 @@ span {
   border: 2px solid #5b8a8d;
   margin: 6px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .category-button:hover {
@@ -314,7 +312,6 @@ span {
   .category-card {
     margin-left: 0;
     margin: 10px 12px;
-    width: 40%;
   }
   .category-right {
     margin-left: 0;
@@ -348,7 +345,6 @@ span {
   }
 
   .category-card {
-    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -370,7 +366,6 @@ span {
   }
 
   .category-images {
-    width: 106px;
     height: 100px;
     margin-top: 0;
   }
@@ -471,7 +466,7 @@ span {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .faq_list__item__question_wrapper:hover {
@@ -553,16 +548,13 @@ span {
   color: #d9bfb3;
 }
 
-
-
-
 summary {
   font-size: 14px;
   color: #5b8a8d;
 }
 
 summary svg {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 summary span {
@@ -571,5 +563,18 @@ summary span {
   color: #5b8a8d;
 }
 
+.category-images {
+  width: 100% !important;
+}
 
+.category-text,
+.category-titles,
+.category-button {
+  width: 100% !important;
+}
 
+@media (max-width: 450px) {
+  .category-card {
+    width: 100% !important;
+  }
+}
