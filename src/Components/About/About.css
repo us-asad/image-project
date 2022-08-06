@@ -67,22 +67,24 @@
   padding-left: 70px;
 }
 
-.about-btn:hover .about-span {
-  width: 100%;
-}
 
 .form__login-btn span {
   color: #5b8a8d;
 }
+
+#change-btn {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
 .about-span {
   background: #ffebe2;
   width: 52px;
   border-radius: 50px;
   padding: 14px 16px;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   -webkit-transition: all .3s ease;
   -moz-transition: all .3s ease;
   -ms-transition: all .3s ease;

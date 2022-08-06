@@ -45,7 +45,6 @@ const Header = () => {
             event.target.setAttribute('data-value', value.toFixed(2));
 
             if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("73%")) {
-              console.log(parseFloat(downRef.current?.style.paddingLeft))
               aRef.current.href = down;
               aRef.current.download = "Baftex";
               setDowned(prev => {
@@ -53,9 +52,9 @@ const Header = () => {
                   aRef.current.click();
                 }
 
+                downRef.current.style.paddingLeft = "0%";
                 return true
               })
-              downRef.current.style.paddingLeft = "0%";
             } else {
               setTimeout(() => {
                 downRef.current.style.paddingLeft = "0%";
