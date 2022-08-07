@@ -44,7 +44,7 @@ const Header = () => {
             event.target.style.paddingLeft = (value * 100) + '%'
             event.target.setAttribute('data-value', value.toFixed(2));
 
-            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("73%")) {
+            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("74%")) {
               aRef.current.href = down;
               aRef.current.download = "Baftex";
               setDowned(prev => {
