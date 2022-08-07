@@ -53,16 +53,24 @@
   border: none;
   margin-top: 15px;
   cursor: pointer;
+  transition: all .3s;
+  border: 2px solid #fff;
 }
 
 .form__login-btn:hover {
   background-color: #5b8a8d;
-  color: white;
-  border: 2px solid white;
+}
+
+.form__login-btn.disabled:hover {
+  background: #fff !important;
 }
 
 .form__login-btn:hover span {
   color: white;
+}
+
+.form__login-btn.disabled:hover span {
+  color: #5b8a8d !important;
 }
 
 .qeusion__section {

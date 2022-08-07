@@ -8,20 +8,47 @@ import ModalWithBg from "../../Components/ModalWithBg/ModalWithBg";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { AiFillStar } from "react-icons/ai";
+import { sendMessage } from "../../data";
+import Swal from "sweetalert2";
 
 const ProductAboutPage = () => {
-  const [value, setValue] = useState(4);
   const [data, setData] = useState([]);
   const [product, setProduct] = useState({});
   const [openModal, setOpenModal] = useState(false);
   const [colors, setColors] = useState([]);
   const [selectedColor, setSelectedColor] = useState("");
+  const [loading, setLoading] = useState(false);
   const params = useParams();
   const { t } = useTranslation();
 
   const toggleModal = state => {
     setOpenModal(state);
     document.body.style.overflow = state ? "hidden" : "auto";
+  }
+
+  const submitOrder = async e => {
+    e.preventDefault();
+    setLoading(true);
+
+    const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A`;
+    const ok = await sendMessage(message);
+
+    if (ok) {
+      e.target.children.name.value = ""
+      e.target.children.phone_number.value = ""
+
+      Swal.fire(
+        "Ajoyib!",
+        "Buyurmangiz muvafaqiyatli qabul qilindi",
+        "success"
+      );
+    } else {
+      Swal.fire(
+        "Kechirasiz!",
+        "Xatolik yuz berdi, Iltimos keyinroq qaytadan urinib ko'ring.",
+        "error"
+      );
+    }
   }
 
   useEffect(() => {
@@ -77,7 +104,7 @@ const ProductAboutPage = () => {
                     <li
                       key={color}
                       className="color-item"
-                      style={{transform: `scale(${color !== selectedColor ? ".9" : "1.1"})`, borderColor: color !== selectedColor ? "#fff" : "#5a969c"}}
+                      style={{ transform: `scale(${color !== selectedColor ? ".9" : "1.1"})`, borderColor: color !== selectedColor ? "#fff" : "#5a969c" }}
                       onClick={() => setSelectedColor(color)}
                     >
                       <span style={{ background: color }}></span>
@@ -90,7 +117,7 @@ const ProductAboutPage = () => {
               <button
                 className="info-btn"
                 onClick={() => toggleModal(true)}
-                style={{margin: "0", borderRadius: "15px"}}
+                style={{ margin: "0", borderRadius: "15px" }}
               >{t("product_page_order_button")}</button>
             </div>
             <div className="info-text">
@@ -118,8 +145,10 @@ const ProductAboutPage = () => {
                       <img src={e.image1} alt="" className="category-img" />
                     </div>
                     <p className="category-text">{e[`name_${i18next.language}`]}</p>
-                    <div className="category-titles" style={{width: "100%"}}>
-                      <button style={{width: "100%", margin: "0", borderRadius: "15px"}} className="category-button">{t("product_page_order_button")}</button>
+                    <div className="category-titles" style={{ width: "100%" }}>
+                      <button style={{ width: "100%", margin: "0", borderRadius: "15px" }} className="category-button">
+                        {t(loading ? "sending" : "home_page_contact_button_name")}{loading ? "..." : null}
+                      </button>
                     </div>
                   </div>
                 </Link>
@@ -129,11 +158,11 @@ const ProductAboutPage = () => {
         </div>
       </div>
       <ModalWithBg open={openModal} toggleOpen={toggleModal}>
-        <form action="" className="product-form">
+        <form className="product-form" onSubmit={submitOrder}>
           <h3 className="form-name product-form-title">{t("product_page_order_button")}</h3>
-          <input type="name" placeholder={t("product_page_name_input")} required className="form-input" />
-          <input type="tell " placeholder={t("product_page_tel_input")} required className="form-input" />
-          <button className="form-btn">{t("product_page_button_name")}</button>
+          <input type="name" placeholder={t("product_page_name_input")} required className="form-input" name="name" />
+          <input type="tell " placeholder={t("product_page_tel_input")} required className="form-input" name="phone_number" />
+          <button className={`form-btn ${loading ? "disabled" : null}`}>{t("product_page_button_name")}</button>
         </form>
       </ModalWithBg>
       <Form />
