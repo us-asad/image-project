@@ -21,7 +21,7 @@
 }
 
 .color-item {
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -86,7 +86,7 @@
   border-radius: 10px;
   border: 2px solid #5b8a8d;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .info-btn:hover {
@@ -95,7 +95,7 @@
 }
 
 .form-btn {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .form-btn:hover {
@@ -179,14 +179,16 @@
   width: 210px;
   margin-left: 20px;
   height: 170px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.info-img:hover, .info-imgs:hover {
+.info-img:hover,
+.info-imgs:hover {
   transform: scale(1.1);
 }
 
-.info__title div, .info__titles div {
+.info__title div,
+.info__titles div {
   overflow: hidden;
 }
 
@@ -195,7 +197,7 @@
   height: 120px;
   margin-left: 25px;
   margin-top: 25px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .div {
@@ -248,8 +250,8 @@
   flex-direction: column;
   row-gap: 25px;
   justify-content: center;
-  background: #5B8A8D;
-  color: white
+  background: #5b8a8d;
+  color: white;
 }
 
 .product-form-title {
@@ -266,36 +268,36 @@
   margin: auto;
 }
 
-
 @media (max-width: 800px) {
   .info .container {
     flex-direction: column;
     justify-content: center;
   }
 
-  .info-left, .info-right {
+  .info-left,
+  .info-right {
     justify-content: center;
   }
 }
 
-
 @media (max-width: 600px) {
   .info-box {
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 120px 120px;
   }
 
+  .info-card {
+    width: 100%;
+  }
 
   .info-text {
-    width: auto
+    width: auto;
   }
 }
 
 @media (max-width: 500px) {
   .info-left {
-    flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 }
-
