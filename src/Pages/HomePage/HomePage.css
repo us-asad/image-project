@@ -109,16 +109,6 @@
     height: 240px;
     transform: translate(-72%, 20%);
   }
-  /* .numbers-left {
-        width: 49%;
-        position: absolute;
-        top: 33.9%;
-     
-        left: 0.8%;
-    }
-    .numbers-img{
-        height: 528px;
-    } */
 }
 
 @media (max-width: 1020px) {
@@ -546,9 +536,7 @@
   .numbers-list {
     margin: 0;
   }
-  .numbers {
-    height: 74vh;
-  }
+  
   .numbers-num {
     line-height: 0;
     font-size: 37px;
