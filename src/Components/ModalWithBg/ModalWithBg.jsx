@@ -4,8 +4,8 @@ import { RiCloseLine } from "react-icons/ri"
 
 export default function ModalWithBg({ open, toggleOpen, children }) {
   return (
-    <div className='modal-container'>
-      <div className={`modal ${!open && "hide"}`}>
+    <div className={`modal-container ${!open && "hide"}`}>
+      <div className={`modal`}>
         {children}
         <button onClick={() => toggleOpen(false)} className='modal-close'>
           <RiCloseLine style={{color: "#fff"}} />

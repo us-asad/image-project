@@ -1,28 +1,26 @@
-.modal,
+.modal-container {
+  position: fixed;
+  transition: all 0.3s;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0;
+}
+
 .modal-bg {
   position: fixed;
   transition: all 0.3s;
 }
 
 .modal {
+  position: relative;
   z-index: 19001;
   display: grid;
   place-content: center;
   width: max-content;
   height: max-content;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-
-  transform: -webkit-translate(-50%, -50%);
-  -webkit-transform: -webkit-translate(-50%, -50%);
-  -ms-transform: -webkit-translate(-50%, -50%);
-  -moz-transform: -webkit-translate(-50%, -50%);
-  -o-transform: -webkit-translate(-50%, -50%);
 }
 
 .modal-bg {
@@ -48,6 +46,7 @@
   place-content: center;
   transition: all 0.3s;
   cursor: pointer;
+  z-index: 999999;
 }
 
 .modal-close:hover {
