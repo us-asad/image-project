@@ -11,6 +11,7 @@ import { useTranslation, initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import i18next from 'i18next';
+import Loader from "./Components/Loader/Loader";
 
 i18n
   .use(initReactI18next)
@@ -30,13 +31,21 @@ i18n
 
 function App() {
   const { t, i18n } = useTranslation();
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    i18next.changeLanguage("ru")
+    i18next.changeLanguage("ru");
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+      setLoaded(true);
+      document.body.style.overflow = "auto";
+    }, 1000);
   }, []);
 
   return (
     <div className="App">
+      <Loader loaded={loaded} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:id" element={<ProductPage categoryPage />} />

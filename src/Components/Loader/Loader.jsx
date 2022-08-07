@@ -1,9 +1,10 @@
 import React from 'react'
+import "./Loader.css";
 
-export default function Loader() {
+export default function Loader({ loaded }) {
   return (
-    <div style={{height: "100vh", display: "grid", placeContent: "center"}}>
-      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    <div className={`loader-container ${loaded ? "hide" : null}`}>
+      <div class="lds-hourglass"></div>
     </div>
   )
 }
