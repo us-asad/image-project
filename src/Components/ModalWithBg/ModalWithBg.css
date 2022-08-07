@@ -1,6 +1,7 @@
-.modal, .modal-bg {
+.modal,
+.modal-bg {
   position: fixed;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .modal {
@@ -13,6 +14,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+
+  transform: -webkit-translate(-50%, -50%);
+  -webkit-transform: -webkit-translate(-50%, -50%);
+  -ms-transform: -webkit-translate(-50%, -50%);
+  -moz-transform: -webkit-translate(-50%, -50%);
+  -o-transform: -webkit-translate(-50%, -50%);
 }
 
 .modal-bg {
@@ -36,7 +46,7 @@
   border-radius: 50%;
   display: grid;
   place-content: center;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -48,7 +58,6 @@
 .modal-close:hover svg {
   color: #5b8a8d !important;
 }
-
 
 @media (max-width: 700px) {
   .modal-close {

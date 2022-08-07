@@ -4,7 +4,7 @@ import { RiCloseLine } from "react-icons/ri"
 
 export default function ModalWithBg({ open, toggleOpen, children }) {
   return (
-    <>
+    <div className='modal-container'>
       <div className={`modal ${!open && "hide"}`}>
         {children}
         <button onClick={() => toggleOpen(false)} className='modal-close'>
@@ -15,6 +15,6 @@ export default function ModalWithBg({ open, toggleOpen, children }) {
         className={`modal-bg ${!open && "hide"}`}
         onClick={() => toggleOpen(false)}
       ></div>
-    </>
+    </div>
   );
 }
