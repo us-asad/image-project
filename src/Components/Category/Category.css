@@ -566,6 +566,13 @@ summary span {
   .category-right {
     margin-right: 34px !important;
   }
+
+  .category-box {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    margin: 0 !important;
+  }
 }
 
 @media (max-width: 450px) {
