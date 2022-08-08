@@ -72,7 +72,7 @@ const Category = ({ categoryPage }) => {
             <h3 className="category-names">{categories.find(({ id }) => id == params.id) && categories.find(({ id }) => id == params.id)[`name_${i18next.language}`]}</h3>
             <div className="category-box">
               {data.length ?
-                [...data, ...data, ...data, ...data, ...data].map((e, i) => (
+                data.map((e, i) => (
                   <Link
                     key={i}
                     to={`/${categoryPage ? "product" : "service"}/${e.id}`}
