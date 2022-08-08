@@ -1,17 +1,14 @@
 import "./WhiteNav.css"
-import greenLogo from "../../Assets/Img/greenLogo.png"
 import { useRef, useState } from "react";
 // import Menu1 from "../Menu/Menu1";
 import toggle from '../../Assets/Img/toggle.png'
 import React from 'react';
-import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
-import { languages } from "../../data";
 import { Link } from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
 import { BsTelephone } from "react-icons/bs";
 import MobileNav from "../MobileNav/MobileNav";
+import footerLogo from "../../Assets/Img/footer-logo.svg";
 
 const customStyles = {
   content: {
@@ -89,7 +86,7 @@ const WhiteNav = () => {
       <div className="container">
         <div className="whiteNav-left">
           <Link to="/" className="whiteNav-logo">
-            <img src="/img/logo.png" alt="Baf" className="whiteNav-brand nav-brand" />
+            <img src={footerLogo} alt="Baf" className="whiteNav-brand nav-brand" />
           </Link>
           <ul className="whiteNav-list">
             <li className="whiteNav-item">

@@ -241,12 +241,13 @@
 .info-box {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 50px;
   gap: 30px;
 }
 
 .info-card {
-  width: 200px;
+  width: 130px;
 }
 
 .product-form {

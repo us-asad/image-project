@@ -66,10 +66,13 @@ const ProductAboutPage = () => {
           .entries(prd)
           .filter(item => item[0].includes("color"))
           .map(item => item[1])
-        setColors(colors);
+        setColors(new Set(...colors));
+        console.log(prd)
         setSelectedColor(colors[0]);
       });
   }, [params]);
+
+  console.log(selectedColor)
 
   return (
     <div className="productaboutpage">

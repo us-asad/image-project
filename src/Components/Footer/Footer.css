@@ -20,6 +20,7 @@
   border: 1px solid #5b8a8d;
   border-radius: 50px;
   padding: 20px !important;
+  padding-top: 60px !important;
 }
 
 .footer__hero-top {
@@ -89,6 +90,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 54px;
+  padding-left: 58px;
 }
 
 .footer__bottom-reserv {

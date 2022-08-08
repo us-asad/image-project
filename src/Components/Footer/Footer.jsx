@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import ModalWithBg from "../ModalWithBg/ModalWithBg"
+import FooterLogo from "../../Assets/Img/footer-logo.svg";
 
 const Footer = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
@@ -24,10 +25,10 @@ const Footer = () => {
           <div className="footer__hero-top">
             <div className="footer__logo">
               <Link className="footer__logo-link" to="/">
-                <img src="/img/logo.png" className="nav-brand" alt="Site-logo" width="80" height="29" />
+                <img src={FooterLogo} alt="Site-logo" width="80" height="29" />
               </Link>
             </div>
-            <div className="hero__parent-link" style={{marginTop: "20px"}}>
+            <div className="hero__parent-link">
               <div className="footer__hero-nav">
                 <a className="footer__nav-link" href="/about">{t("footer_nav_item_1")}</a>
                 <button style={{background: "transparent", border: "0", outline: "0", cursor: "pointer"}} className="footer__nav-link" onClick={() => toggleYtModal(true)}>{t("footer_nav_item_2")}</button>
@@ -54,8 +55,8 @@ const Footer = () => {
               <a className="footer__communication-link" href="tel:+998997080080">{t("footer_contact_tel_title")}:
                 <p className="communication__link-text">+998997080080</p>
               </a>
-              <a className="footer__communication-link" href="mail:info@baftex.uz">{t("footer_contact_email_title")}:
-                <p className="communication__link-text">info@baftex.uz</p>
+              <a className="footer__communication-link" href="mail:info@image-tex.com">{t("footer_contact_email_title")}:
+                <p className="communication__link-text">info@image-tex.com</p>
               </a>
               <address className="footer__communication-link ">{t("footer_contact_address_title")}:
                 <p className="communication__link-text address__text">{t("footer_contact_address")}</p>

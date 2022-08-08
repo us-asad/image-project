@@ -91,13 +91,12 @@ const Nav = () => {
     }, 10000);
   }, []);
 
-
   return (
     <nav className="nav">
       <div className="container">
         <div className="nav-left">
           <Link to="/" className="nav-logo">
-            <img src="/img/logo.png" alt="" className="nav-brand" />
+            <img src={Logo} alt="Logo" className="nav-brand" />
           </Link>
           <ul className="nav-list">
             <li className="nav-item">

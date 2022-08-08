@@ -10,7 +10,7 @@
 }
 .numbers-list {
   display: flex;
-  justify-content: space-between;
+  gap: 80px;
   align-items: center;
 }
 .numbers-bottom {
@@ -144,4 +144,11 @@
 
 .numbers-img {
   transition: all 3s cubic-bezier(1, 0.23, 0, 0.49);
+}
+
+@media (max-width: 1025px) {
+  .numbers-list {
+    gap: 0;
+    justify-content: space-between;
+  }
 }

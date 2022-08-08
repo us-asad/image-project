@@ -73,12 +73,6 @@ a {
   animation-delay: -0.15s;
 }
 
-.nav-brand {
-  width: 100px;
-  height: 60px;
-  object-fit: contain;
-}
-
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
