@@ -21,6 +21,7 @@
   place-content: center;
   width: max-content;
   height: max-content;
+  margin-top: 60px;
 }
 
 .modal-bg {

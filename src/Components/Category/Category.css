@@ -165,6 +165,7 @@ span {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 .category-card {
   margin: 10px;
@@ -571,7 +572,6 @@ summary span {
     display: grid;
     grid-template-columns: auto auto;
     gap: 20px;
-    margin: 0 !important;
   }
 }
 
