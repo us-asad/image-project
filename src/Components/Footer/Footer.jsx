@@ -18,7 +18,7 @@ const Footer = () => {
   const submitMail = async e => {
     e.preventDefault();
 
-    const ok = await sendMessage(`Yangi Email📧!😊%0AEmail: ${e.target.children.email.value}`);
+    const ok = await sendMessage(`Yangi Email!😊%0A📧Email: ${e.target.children.email.value}`);
     
     if (ok) {
       e.target.children.email.value = ""
