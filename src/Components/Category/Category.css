@@ -109,6 +109,8 @@
   height: 164px;
   text-align: center;
   overflow: hidden;
+  display: grid;
+  place-content: center;
 }
 
 .category-img:hover {

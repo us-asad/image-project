@@ -30,7 +30,10 @@ const ProductAboutPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A`;
+    console.log(selectedColor, "that is selected color")
+
+    const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A🏔Rangi: ${selectedColor.slice(1)}%0A`;
+    console.log(selectedColor, "tasg")
     const ok = await sendMessage(message);
 
     if (ok) {
@@ -52,7 +55,7 @@ const ProductAboutPage = () => {
   }
 
   useEffect(() => {
-    fetch(`https://api-baf.abba.uz/products/?format=json`)
+    fetch(`https://api-baf.abba.uz/recomendation/?format=json`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
@@ -66,7 +69,8 @@ const ProductAboutPage = () => {
           .entries(prd)
           .filter(item => item[0].includes("color"))
           .map(item => item[1])
-        setColors(new Set(...colors));
+          console.log(colors)
+        setColors(colors.filter(cl => cl));
         console.log(prd)
         setSelectedColor(colors[0]);
       });
