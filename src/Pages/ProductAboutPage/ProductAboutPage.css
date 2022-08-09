@@ -272,6 +272,7 @@
 .category-box {
   width: 100%;
   margin: auto;
+  margin-top: 20px;
 }
 
 @media (max-width: 800px) {

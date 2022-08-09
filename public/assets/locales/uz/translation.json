@@ -45,5 +45,7 @@
   "product_page_button_name": "Yuborish",
   "product_page_no_products": "Mahsulotlar mavjud emas",
   "product_page_color": "Rang",
-  "sending": "Yuborilmoqda"
+  "sending": "Yuborilmoqda",
+  "success_title": "Ajoyib",
+  "success_text": "sizning so'rovingiz muvofaqiyatli tarzda amalga oshirildi!"
 }

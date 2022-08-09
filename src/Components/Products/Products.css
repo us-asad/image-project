@@ -108,6 +108,11 @@ body {
   transition: all 0.5s;
 }
 
+.splide__track {
+  overflow-x: hidden;
+  overflow-y: clip !important;
+}
+
 .splide-header .splide-img:hover {
   transform: scale(1.1);
 }

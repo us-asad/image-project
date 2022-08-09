@@ -222,8 +222,8 @@
 
 @media (max-width: 375px) {
   .iframe-container iframe {
-    width: 250px;
-    height: 130px;
+    width: 90vw;
+    height: 166px;
   }
 }
 

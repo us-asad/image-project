@@ -43,11 +43,17 @@
   display: block;
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 17px;
   color: #5b8a8d;
   text-decoration: none;
   margin-bottom: 10px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.footer__nav-link:hover {
+  color: #75aeb2;
 }
 
 .footer__form-label {
@@ -380,5 +386,10 @@
 }
 
 .footer__communication-link:nth-child(1) .communication__link-text {
-  margin-left: 80px;
+  margin-left: 146px;
 }
+
+.footer__reserv-communication {
+  padding-right: 28px;
+}
+

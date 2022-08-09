@@ -45,5 +45,7 @@
   "product_page_button_name": "ОТПРАВИТЬ",
   "product_page_no_products": "Продукты недоступны",
   "product_page_color": "Цвет",
-  "sending": "Oтправляется"
+  "sending": "Oтправляется",
+  "success_title": "Замечательно",
+  "success_text": "Ваш запрос успешно обработан!"
 }
