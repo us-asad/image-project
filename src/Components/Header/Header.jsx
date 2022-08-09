@@ -56,10 +56,7 @@ const Header = () => {
                 return true
               })
             } else {
-              setTimeout(() => {
-                downRef.current.style.paddingLeft = "0%";
                 setDowned(false);
-              }, 1000);
             }
           }
         }

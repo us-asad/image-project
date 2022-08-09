@@ -35,20 +35,17 @@ const About = () => {
             event.target.style.paddingLeft = (value * 100) + '%'
             event.target.setAttribute('data-value', value.toFixed(2));
 
-            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("73%")) {
+            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("73.5%")) {
               setDowned(prev => {
                 if (!prev) {
                   aRef.current.click();
                 }
 
-                downRef.current.style.paddingLeft = "0%";
+                // downRef.current.style.paddingLeft = "0%";
                 return true
               })
             } else {
-              setTimeout(() => {
-                downRef.current.style.paddingLeft = "0%";
                 setDowned(false);
-              }, 1000);
             }
           }
         }
