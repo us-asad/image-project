@@ -91,7 +91,7 @@
 
 .info-btn:hover {
   color: #5b8a8d;
-  background: #e5e5e5;
+  background: transparent;
 }
 
 .form-btn {

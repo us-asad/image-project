@@ -15,7 +15,7 @@ export default function MobileNav({ showNav, toggleNav }) {
       <div className={`mobile-nav ${!showNav ? "hide" : null}`}>
         <ul>
           {nav_items.map((item, i) => (
-            <li>
+            <li key={i}>
               <Link to={item}>
                 {t(`nav_item_${i + 1}`)}
               </Link>
@@ -25,7 +25,7 @@ export default function MobileNav({ showNav, toggleNav }) {
         <div>
           <select onChange={e => i18next.changeLanguage(e.target.value)}>
             {languages.map(lang => (
-              <option value={lang}>{lang}</option>
+              <option key={lang} value={lang}>{lang}</option>
             ))}
           </select>
           <CgSelect />

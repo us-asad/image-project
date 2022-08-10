@@ -30,10 +30,7 @@ const ProductAboutPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log(selectedColor, "that is selected color")
-
-    const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A🏔Rangi: ${selectedColor.slice(1)}%0A`;
-    console.log(selectedColor, "tasg")
+    const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A🛂Mahsulot Idsi: ${product.id}%0A🏔Rangi: ${selectedColor ? selectedColor.slice(1) : "default"}%0A`;
     const ok = await sendMessage(message);
 
     if (ok) {
@@ -52,6 +49,8 @@ const ProductAboutPage = () => {
         "error"
       );
     }
+
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -167,8 +166,26 @@ const ProductAboutPage = () => {
       <ModalWithBg open={openModal} toggleOpen={toggleModal}>
         <form className="product-form" onSubmit={submitOrder}>
           <h3 className="form-name product-form-title">{t("product_page_order_button")}</h3>
-          <input type="name" placeholder={t("product_page_name_input")} required className="form-input" name="name" />
-          <input type="tell " placeholder={t("product_page_tel_input")} required className="form-input" name="phone_number" />
+          <input
+            type="name"
+            placeholder={t("product_page_name_input")}
+            required
+            className="form-input"
+            name="name"
+            minLength={5}
+            maxLength={500}
+          />
+          <input
+            type="tell "
+            placeholder={t("product_page_tel_input")}
+            required
+            className="form-input"
+            name="phone_number"
+            minLength={5}
+            maxLength={500}
+            pattern="[0-9]{9}"
+            title="Minimum 9 charaters and only numbers"
+          />
           <button className={`form-btn ${loading ? "disabled" : null}`}>{t("product_page_button_name")}</button>
         </form>
       </ModalWithBg>

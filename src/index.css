@@ -108,6 +108,10 @@ a {
 }
 
 
+.swal2-container {
+  z-index: 11270;
+}
+
 @media (max-width: 450px) {
   .category-right {
     width: 100% !important;
