@@ -2,6 +2,12 @@
   background: #5b8a8d;
   min-height: 100vh;
 }
+
+.header .container {
+  position: relative;
+  z-index: 10;
+}
+
 .header-title {
   font-style: normal;
   font-weight: 700;
@@ -204,6 +210,17 @@
 
 .iframe-container iframe {
   border-radius: 10px;
+}
+
+.header__main-bg {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 50%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.148);
+  z-index: 1;
+  box-shadow: 20px 20px 20px #fff;
 }
 
 @media (max-width: 668px) {

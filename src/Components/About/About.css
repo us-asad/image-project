@@ -11,7 +11,6 @@
 
 .about {
   background: #5b8a8d;
-  padding-bottom: 21px;
 }
 
 .about-title {
@@ -127,6 +126,7 @@
 .about .about-img-box {
   z-index: 3;
   position: sticky;
+  display: flex;
 }
 /* .about  .about-img{
    z-index: 11;

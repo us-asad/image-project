@@ -7,14 +7,14 @@ import Adidas from "../../Assets/Img/adidas.png"
 const Partner = () => {
   const [partners, setPartners] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then((res) => res.json())
-  //     .then((data) => setPartners(data));
-  // }, []);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setPartners(data));
+  }, []);
 
   return (
-    <div className="splides" style={{display: "none"}}>
+    <div className="splides">
       <div className="container">
         <div className="splides-top">
           <h2 className='splides-title'>Нам доверяют</h2>

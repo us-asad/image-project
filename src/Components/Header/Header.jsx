@@ -65,6 +65,7 @@ const Header = () => {
 
   return (
     <header className="header">
+      <div className="header__main-bg" />
       <div className="container">
         <div className="header-left">
           <h1 className="header-title">{t("home_page_title")}</h1>

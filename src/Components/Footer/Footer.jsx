@@ -20,7 +20,7 @@ const Footer = () => {
 
     const ok = await sendMessage(`Yangi Email!😊%0A📧Email: ${e.target.children.email.value}`);
     
-    if (ok) {
+    if (!ok) {
       e.target.children.email.value = ""
 
       Swal.fire(

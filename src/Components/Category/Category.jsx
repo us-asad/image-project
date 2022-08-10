@@ -19,7 +19,7 @@ const Category = ({ categoryPage }) => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://api-baf.abba.uz/products/?format=json`)
+    fetch(`https://api-baf.abba.uz/${categoryPage ? "products" : "services"}/?format=json`)
       .then(res => res.json())
       .then(data => {
         setData(data.filter(prd => prd.category == params.id));

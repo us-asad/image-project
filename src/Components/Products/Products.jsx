@@ -94,7 +94,7 @@ const Products = () => {
                 [...data, ...data].map((e, i) => (
                   <SplideSlide key={i}>
                     <Link to={`/${getPrds ? "category" : "services"}/${e.id}`} >
-                      <div className="splide-header">
+                      <div className="splide-header splide-bg-item" style={{background: i % 2 ? "#ffebe2" : "#e2e9e7"}}>
                         <img src={e.image} alt="" className="splide-img" />
                       </div>
                       <h2 className="splide-title">
