@@ -39,7 +39,7 @@ const Footer = () => {
 
   const toggleYtModal = state => {
     setOpenYtModal(state);
-    document.body.style.overflow = state ? "hidden" : "auto";
+    document.body.style.overflowY = state ? "hidden" : "auto";
   }
 
   return (

@@ -14,7 +14,7 @@ const Partner = () => {
   }, []);
 
   return (
-    <div className="splides">
+    <div className="splides partners">
       <div className="container">
         <div className="splides-top">
           <h2 className='splides-title'>Нам доверяют</h2>

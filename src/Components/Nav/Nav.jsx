@@ -34,7 +34,7 @@ const Nav = () => {
 
   const toggleNav = state => {
     setShowNav(state);
-    document.body.style.overflow = state ? "hidden" : "auto";
+    document.body.style.overflowY = state ? "hidden" : "auto";
   }
   
   const play = () => {

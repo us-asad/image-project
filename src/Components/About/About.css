@@ -11,6 +11,8 @@
 
 .about {
   background: #5b8a8d;
+  position: relative;
+  z-index: 10;
 }
 
 .about-title {

@@ -20,7 +20,7 @@ const Header = () => {
 
   const toggleYtModal = state => {
     setOpenYtModal(state);
-    document.body.style.overflow = state ? "hidden" : "auto";
+    document.body.style.overflowY = state ? "hidden" : "auto";
   }
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Header = () => {
                 return true
               })
             } else {
-                setDowned(false);
+              setDowned(false);
             }
           }
         }
