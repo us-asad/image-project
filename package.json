@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@interactjs/interactjs": "^1.10.17",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@mui/material": "^5.9.2",
@@ -26,6 +27,7 @@
     "react-dom": "^18.1.0",
     "react-i18next": "^11.18.3",
     "react-icons": "^4.4.0",
+    "react-interactjs": "^0.1.2",
     "react-modal": "^3.15.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",

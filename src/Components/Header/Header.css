@@ -100,7 +100,7 @@
   cursor: pointer;
 }
 
-#down-btn {
+.down-btn, .main-btn {
   position: absolute;
   top: 0;
   width: 100%;
@@ -223,7 +223,7 @@
   z-index: 1;
   opacity: .6;
   width: 100%;
-  height: 200vh;
+  height: 400vh;
   background-image: url("../../Assets/Img/bg1.png");
   background-repeat: no-repeat;
   background-position: 7000% top;

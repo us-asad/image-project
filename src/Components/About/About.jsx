@@ -17,7 +17,7 @@ const About = () => {
   const [, setDowned] = useState(false);
 
   useEffect(() => {
-    const btn = interact('#change-btn');
+    const btn = interact('.main-btn');
 
     btn
       .draggable({                        // make the element fire drag events
@@ -49,7 +49,7 @@ const About = () => {
             } else {
               setDowned(false);
               timeout = setTimeout(() => {
-                downRef.current.style.paddingLeft = "0%"; 
+                downRef.current.style.paddingLeft = "0%";
               }, 500);
             }
           }
@@ -72,18 +72,16 @@ const About = () => {
           <h2 className="about-title">{t("home_page_about_title")}</h2>
           <p className="about-text font-pfb">{t("home_page_about_text_1")}</p>
           <p className="about-subtext">{t("home_page_about_text_2")}</p>
-          <Link to="#" hidden ref={aRef}></Link>
-          <div>
-            <button className="about-btn">
-              <div ref={downRef} id="change-btn">
-                <span  className="about-span">
-                  <img src={nextImg} alt="" className="about-icon" />
-                </span>
+          <div className="download-box">
+            <div className="download-btn">
+              {t("home_page_download")}
+            </div>
+            <div ref={downRef} className="main-btn" data-btn="about">
+              <div className="download-blok">
+                <img src={nextImg} alt="" className="download-icon" />
               </div>
-              <span className="about-pod">
-                {t("home_page_about_button_name")}
-              </span>
-            </button>
+            </div>
+            <Link to="/about" hidden ref={aRef}></Link>
           </div>
         </div>
         <div className="about-right">

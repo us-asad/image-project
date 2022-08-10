@@ -26,7 +26,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    const btn = interact('#down-btn');
+    const btn = interact('.down-btn');
 
     btn
       .draggable({                        // make the element fire drag events
@@ -41,12 +41,12 @@ const Header = () => {
           move(event) {                  // call this listener on every dragmove
             const sliderWidth = interact.getElementRect(event.target).width
             const value = event.pageX / sliderWidth
-
             event.target.style.paddingLeft = (value * 100) + '%'
             event.target.setAttribute('data-value', value.toFixed(2));
             clearTimeout(timeout)
 
             if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("74%")) {
+              
               aRef.current.href = down;
               aRef.current.download = "Baftex";
               setDowned(prev => {
@@ -76,16 +76,16 @@ const Header = () => {
           <h1 className="header-title">{t("home_page_title")}</h1>
           <p className="header-text">{t("home_page_subtitle")}</p>
           <div className="header-btns">
-            <a ref={aRef} hidden></a>
             <div className="download-box">
               <div className="download-btn">
                 {t("home_page_download")}
               </div>
-              <div ref={downRef} id="down-btn">
+              <div ref={downRef} className="down-btn">
                 <div className="download-blok">
                   <img src={downloadIcon} alt="" className="download-icon" />
                 </div>
               </div>
+              <a ref={aRef} hidden />
             </div>
             <div className="ytb-box">
               <button

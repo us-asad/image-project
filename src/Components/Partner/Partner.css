@@ -55,3 +55,7 @@
 .splides {
   background-image: linear-gradient(to bottom, white 0% 50%, #feebe2 50% 100%);
 }
+
+.splides-img {
+  object-fit: contain;
+}

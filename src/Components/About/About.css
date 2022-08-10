@@ -35,6 +35,10 @@
   width: 320px;
 }
 
+.about-medium .download-box {
+  width: 231px;
+}
+
 .about-subtext {
   font-style: normal;
   font-weight: 400;
