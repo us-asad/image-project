@@ -16,6 +16,10 @@
   padding-bottom: 21px;
 }
 
+.splides-container {
+  margin: 0 63px;
+}
+
 .splide-slide {
   display: flex;
   justify-content: space-between;

@@ -310,6 +310,14 @@ span {
     width: 400px;
   }
 
+  .splides-container {
+    display: none;
+  }
+
+  .splides-top {
+    padding-bottom: 120px;
+  }
+
   .category-names {
     margin-left: 20px;
   }
