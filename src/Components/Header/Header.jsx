@@ -11,12 +11,14 @@ import i18next from "i18next";
 import { languages } from "../../data";
 import interact from "interactjs";
 
+let timeout = null;
+
 const Header = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
   const { t } = useTranslation();
   const downRef = useRef();
   const aRef = useRef();
-  const [downed, setDowned] = useState(false);
+  const [, setDowned] = useState(false);
 
   const toggleYtModal = state => {
     setOpenYtModal(state);
@@ -35,7 +37,6 @@ const Header = () => {
             restriction: 'self'           // keep the drag coords within the element
           })
         ],
-        // Step 3
         listeners: {
           move(event) {                  // call this listener on every dragmove
             const sliderWidth = interact.getElementRect(event.target).width
@@ -43,6 +44,7 @@ const Header = () => {
 
             event.target.style.paddingLeft = (value * 100) + '%'
             event.target.setAttribute('data-value', value.toFixed(2));
+            clearTimeout(timeout)
 
             if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("74%")) {
               aRef.current.href = down;
@@ -53,10 +55,13 @@ const Header = () => {
                 }
 
                 downRef.current.style.paddingLeft = "0%";
-                return true
+                return true;
               })
             } else {
               setDowned(false);
+              timeout = setTimeout(() => {
+                downRef.current.style.paddingLeft = "0%";
+              }, 500);
             }
           }
         }
@@ -73,7 +78,6 @@ const Header = () => {
           <div className="header-btns">
             <a ref={aRef} hidden></a>
             <div className="download-box">
-              {/* href={down} download  */}
               <div className="download-btn">
                 {t("home_page_download")}
               </div>

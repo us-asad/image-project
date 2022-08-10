@@ -15,8 +15,6 @@ const Partner = () => {
       .then((data) => setPartners(data));
   }, []);
 
-  console.log(partners)
-
   return (
     <div className="splides partners">
       <div className="container">

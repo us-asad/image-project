@@ -57,9 +57,7 @@ const ProductAboutPage = () => {
           .entries(prd)
           .filter(item => item[0].includes("color"))
           .map(item => item[1])
-          console.log(colors)
         setColors(colors.filter(cl => cl));
-        console.log(prd)
         setSelectedColor(colors[0]);
       });
   }, [params]);

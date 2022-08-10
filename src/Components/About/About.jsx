@@ -8,11 +8,13 @@ import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import interact from "interactjs";
 
+let timeout = null;
+
 const About = () => {
   const { t } = useTranslation();
   const downRef = useRef();
   const aRef = useRef();
-  const [downed, setDowned] = useState(false);
+  const [, setDowned] = useState(false);
 
   useEffect(() => {
     const btn = interact('#change-btn');
@@ -26,7 +28,6 @@ const About = () => {
             restriction: 'self'           // keep the drag coords within the element
           })
         ],
-        // Step 3
         listeners: {
           move(event) {                  // call this listener on every dragmove
             const sliderWidth = interact.getElementRect(event.target).width
@@ -34,18 +35,22 @@ const About = () => {
 
             event.target.style.paddingLeft = (value * 100) + '%'
             event.target.setAttribute('data-value', value.toFixed(2));
+            clearTimeout(timeout)
 
-            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("73.5%")) {
+            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("74%")) {
               setDowned(prev => {
                 if (!prev) {
                   aRef.current.click();
                 }
 
-                // downRef.current.style.paddingLeft = "0%";
-                return true
+                downRef.current.style.paddingLeft = "0%";
+                return true;
               })
             } else {
-                setDowned(false);
+              setDowned(false);
+              timeout = setTimeout(() => {
+                downRef.current.style.paddingLeft = "0%"; 
+              }, 500);
             }
           }
         }
@@ -67,7 +72,7 @@ const About = () => {
           <h2 className="about-title">{t("home_page_about_title")}</h2>
           <p className="about-text font-pfb">{t("home_page_about_text_1")}</p>
           <p className="about-subtext">{t("home_page_about_text_2")}</p>
-          <Link to="/about" hidden ref={aRef}></Link>
+          <Link to="#" hidden ref={aRef}></Link>
           <div>
             <button className="about-btn">
               <div ref={downRef} id="change-btn">
