@@ -101,7 +101,7 @@
 
 .footer__bottom-reserv {
   /* display: block; */
-  margin-left: 30px;
+  margin-left: 40px;
   max-width: 100%;
   width: 147px;
   height: 32px;
@@ -125,13 +125,13 @@
   font-size: 10px;
   line-height: 14px;
   color: #5b8a8d;
-  margin-left: 73px;
+  margin-left: 95px;
   margin-bottom: 10px;
   text-decoration: none;
 }
 
 .communication__link-text {
-  margin-left: 73px;
+  margin-left: 140px;
 }
 
 .footer__social {
