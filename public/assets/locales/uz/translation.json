@@ -7,7 +7,7 @@
   "home_page_subtitle": "ZAMONAMIZ TALAB QILGAN YO'NALISH",
   "home_page_download": "katalogni yuklab olish",
   "home_page_play_video": "videoni ko'ring",
-  "home_page_categories_title": "Biz nimani taklif qilamiz?",
+  "home_page_categories_title": "Bizning mahsulotlarimiz va xizmatlarimiz",
   "home_page_categories_name": "Mahsulotlar",
   "home_page_services_name": "Xizmatlar",
   "home_page_about_title": "Biz haqidamizda",
@@ -15,10 +15,11 @@
   "home_page_about_text_2": "",
   "home_page_about_button_name": "Ko'proq",
   "home_page_numbers_title": "Biz raqamlarda",
-  "home_page_contact_title": "Qiziqtirgan savollaringiz bormi?",
+  "home_page_contact_title": "Savol va takliflaringizni qoldiring",
   "home_page_contact_name_input": "Ismingiz",
   "home_page_contact_number_input": "Telefon Raqamingiz",
   "home_page_contact_button_name": "Yuborish",
+  "home_page_partners_title": "Bizning ishonchli hamkorlarimiz",
   "footer_nav_item_1": "Biz haqimizda",
   "footer_nav_item_2": "Bizning video",
   "footer_nav_item_3": "Mahsulotlar",
@@ -47,5 +48,9 @@
   "product_page_color": "Rang",
   "sending": "Yuborilmoqda",
   "success_title": "Ajoyib",
-  "success_text": "sizning so'rovingiz muvofaqiyatli tarzda amalga oshirildi!"
+  "success_text": "sizning so'rovingiz muvofaqiyatli tarzda amalga oshirildi!",
+  "error_title": "Kechirasiz!",
+  "error_text": "Xatolik yuz berdi, Iltimos keyinroq qaytadan urinib ko'ring.",
+  "number_input_warning": "9 ta raqamlardan tashkil topgan bo'lishi shart, misol: 995552233",
+  "name_input_warning": "belgilar minimal 5 ta va maksimal 500 ta bo'lishi shart"
 }

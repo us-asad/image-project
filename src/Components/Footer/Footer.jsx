@@ -8,32 +8,21 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import ModalWithBg from "../ModalWithBg/ModalWithBg"
 import FooterLogo from "../../Assets/Img/footer-logo.svg";
-import { sendMessage } from "../../data"
-import Swal from "sweetalert2"
+import { useSendMessageToTg } from "../../hooks/useSendMessageToTg"
 
 const Footer = () => {
   const [openYtModal, setOpenYtModal] = useState(false);
+  const sendMessage = useSendMessageToTg();
   const { t } = useTranslation();
 
-  const submitMail = async e => {
+  const submitEmail = async e => {
     e.preventDefault();
 
-    const ok = await sendMessage(`Yangi Email!😊%0A📧Email: ${e.target.children.email.value}`);
-    
-    if (!ok) {
-      e.target.children.email.value = ""
+    const message = `Yangi Email!😊%0A📧Email: ${e.target.children.email.value}`;
+    const ok = await sendMessage(message);
 
-      Swal.fire(
-        "Ajoyib!",
-        "Buyurmangiz muvafaqiyatli qabul qilindi",
-        "success"
-      );
-    } else {
-      Swal.fire(
-        "Kechirasiz!",
-        "Xatolik yuz berdi, Iltimos keyinroq qaytadan urinib ko'ring.",
-        "error"
-      );
+    if (ok) {
+      e.target.children.email.value = ""
     }
   }
 
@@ -64,7 +53,7 @@ const Footer = () => {
                 <a className="footer__nav-link" href="/#">{t("footer_nav_item_6")}</a>
               </div>
             </div>
-            <form className="footer__hero-form" onSubmit={submitMail}>
+            <form className="footer__hero-form" onSubmit={submitEmail}>
               <label className="footer__form-label" htmlFor="inpmail">{t("footer_email_title")}</label>
               <input className="footer__form-input" type="email" id="inpmail" placeholder={t("footer_email_input")}
                 required name="email" />

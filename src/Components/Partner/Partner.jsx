@@ -3,21 +3,25 @@ import '@splidejs/splide/dist/css/splide.min.css';
 import "./Partner.css"
 import { useEffect, useState } from 'react';
 import Adidas from "../../Assets/Img/adidas.png"
+import { useTranslation } from 'react-i18next';
 
 const Partner = () => {
   const [partners, setPartners] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://api-baf.abba.uz/partners/?format=json")
       .then((res) => res.json())
       .then((data) => setPartners(data));
   }, []);
+
+  console.log(partners)
 
   return (
     <div className="splides partners">
       <div className="container">
         <div className="splides-top">
-          <h2 className='splides-title'>Нам доверяют</h2>
+          <h2 className='splides-title'>{t("home_page_partners_title")}</h2>
         </div>
         {partners.length > 0 && (
           <Splide
@@ -26,14 +30,13 @@ const Partner = () => {
               type: 'loop', perPage:
                 4, autoplay: true,
             }}>
-            {partners.map((partner, i) => (
-              <SplideSlide key={i}
+            {partners.map(partner => (
+              <SplideSlide key={partner.id}
                 className='splide-box'>
-                <a href="#" className="splide-link">
-                  <img className='splide-img' src={Adidas}
-                    alt="Image1" />
-
-                </a>
+                <span className="splide-link">
+                  <img className='splide-img' src={partner.image}
+                    alt={`Partner img${partner.id}`} />
+                </span>
               </SplideSlide>
             ))}
           </Splide>
@@ -43,10 +46,10 @@ const Partner = () => {
             <ul className="splides-list">
               {partners.map((partner, i) => (
                 <li className="splides-item" key={i}>
-                  <a href="#" className="splides-link">
+                  <span className="splides-link">
                     <img src={Adidas} alt=""
                       className="splides-img" />
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>

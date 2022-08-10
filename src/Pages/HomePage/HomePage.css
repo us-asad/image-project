@@ -2,6 +2,10 @@
   position: static !important;
 }
 
+.about-title {
+  text-align: center;
+}
+
 @media (max-width: 1450px) {
   .container {
     width: 1280px;
@@ -340,6 +344,10 @@
     display: block;
   }
 
+  .about {
+    padding-bottom: 50px;
+  }
+
   .nav-button {
     display: block;
     outline: none;
@@ -410,7 +418,7 @@
   }
 
   .about-medium {
-    padding-top: 150px;
+    padding-top: 90px;
     z-index: 11;
   }
 
@@ -687,9 +695,7 @@ border: 1px solid #FFFFFF; */
   .numbers-num {
     font-size: 27px;
   }
-  .splide {
-    display: none;
-  }
+  
   .splides-list {
     display: flex;
     justify-content: center;

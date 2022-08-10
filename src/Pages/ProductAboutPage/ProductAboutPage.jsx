@@ -8,8 +8,7 @@ import ModalWithBg from "../../Components/ModalWithBg/ModalWithBg";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { AiFillStar } from "react-icons/ai";
-import { sendMessage } from "../../data";
-import Swal from "sweetalert2";
+import { useSendMessageToTg } from "../../hooks/useSendMessageToTg";
 
 const ProductAboutPage = () => {
   const [data, setData] = useState([]);
@@ -19,6 +18,7 @@ const ProductAboutPage = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const [loading, setLoading] = useState(false);
   const params = useParams();
+  const sendMessage = useSendMessageToTg();
   const { t } = useTranslation();
 
   const toggleModal = state => {
@@ -28,29 +28,18 @@ const ProductAboutPage = () => {
 
   const submitOrder = async e => {
     e.preventDefault();
-    setLoading(true);
-
+    setLoading(true)
     const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A🛂Mahsulot Idsi: ${product.id}%0A🏔Rangi: ${selectedColor ? selectedColor.slice(1) : "default"}%0A`;
+    
     const ok = await sendMessage(message);
 
     if (ok) {
-      e.target.children.name.value = ""
-      e.target.children.phone_number.value = ""
-
-      Swal.fire(
-        "Ajoyib!",
-        "Buyurmangiz muvafaqiyatli qabul qilindi",
-        "success"
-      );
-    } else {
-      Swal.fire(
-        "Kechirasiz!",
-        "Xatolik yuz berdi, Iltimos keyinroq qaytadan urinib ko'ring.",
-        "error"
-      );
+      e.target.children.name.value = "";
+      e.target.children.phone_number.value = "";
     }
 
-    setLoading(false)
+    setLoading(false);
+    toggleModal(false);
   }
 
   useEffect(() => {
@@ -74,8 +63,6 @@ const ProductAboutPage = () => {
         setSelectedColor(colors[0]);
       });
   }, [params]);
-
-  console.log(selectedColor)
 
   return (
     <div className="productaboutpage">
@@ -174,17 +161,16 @@ const ProductAboutPage = () => {
             name="name"
             minLength={5}
             maxLength={500}
+            title={t("name_input_warning")}
           />
           <input
-            type="tell "
+            type="tel"
             placeholder={t("product_page_tel_input")}
             required
             className="form-input"
             name="phone_number"
-            minLength={5}
-            maxLength={500}
             pattern="[0-9]{9}"
-            title="Minimum 9 charaters and only numbers"
+            title={t("number_input_warning")}
           />
           <button className={`form-btn ${loading ? "disabled" : null}`}>{t("product_page_button_name")}</button>
         </form>

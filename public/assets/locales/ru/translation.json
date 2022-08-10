@@ -7,7 +7,7 @@
   "home_page_subtitle": "ВОСТРЕБОВАННОЕ НАПРАВЛЕНИЕ НАШЕГО ВРЕМЕНИ",
   "home_page_download": "Скачать каталог",
   "home_page_play_video": "Смотреть ролик",
-  "home_page_categories_title": "Что мы предлагаем?",
+  "home_page_categories_title": "Наши продукты и услуги",
   "home_page_categories_name": "Продукты",
   "home_page_services_name": "Услуги",
   "home_page_about_title": "О нас",
@@ -15,10 +15,11 @@
   "home_page_about_text_2": "",
   "home_page_about_button_name": "подробнее",
   "home_page_numbers_title": "Мы в числах",
-  "home_page_contact_title": "Есть какие нибудь вопросы?",
+  "home_page_contact_title": "Оставляйте свои вопросы и предложения",
   "home_page_contact_name_input": "Имя",
   "home_page_contact_number_input": "Номер телефона",
   "home_page_contact_button_name": "ОТПРАВИТЬ",
+  "home_page_partners_title": "Наши надежные партнеры",
   "footer_nav_item_1": "О нас",
   "footer_nav_item_2": "Наше видео",
   "footer_nav_item_3": "Продукты",
@@ -47,5 +48,9 @@
   "product_page_color": "Цвет",
   "sending": "Oтправляется",
   "success_title": "Замечательно",
-  "success_text": "Ваш запрос успешно обработан!"
+  "success_text": "Ваш запрос успешно обработан!",
+  "error_title": "ой",
+  "error_text": "Произошла ошибка. Пожалуйста, повторите попытку позже.",
+  "number_input_warning": "Он должен состоять из 9 цифр, например: 995552233",
+  "name_input_warning": "символов должно быть минимум 5 и максимум 500"
 }

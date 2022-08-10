@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Nav.css"
-import Logo from "../../Assets/Img/Logo.png"
+import { Logo } from "../Svgs"
 import ReactAudioPlayer from "react-audio-player";
-import music from "../../Assets/Img/music.mp3"
 import { useEffect, useRef, useState } from "react";
 import toggle from '../../Assets/Img/toggles.png'
 import React from 'react';
-import Modal from 'react-modal';
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
-import { languages } from "../../data";
 import { BsTelephone } from "react-icons/bs";
 import MobileNav from "../MobileNav/MobileNav";
 
@@ -96,7 +92,7 @@ const Nav = () => {
       <div className="container">
         <div className="nav-left">
           <Link to="/" className="nav-logo">
-            <img src={Logo} alt="Logo" className="nav-brand" />
+            <img src="/img/logo-white.png" alt="Logo" className="nav-brand" width={80} height={30} />
           </Link>
           <ul className="nav-list">
             <li className="nav-item">
@@ -110,7 +106,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="/#about" className="nav-link">
+              <a href="/#numbers" className="nav-link">
                 {t("nav_item_3")}
               </a>
             </li>

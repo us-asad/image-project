@@ -109,7 +109,7 @@ a {
 
 
 .swal2-container {
-  z-index: 11270;
+  z-index: 11270 !important;
 }
 
 @media (max-width: 450px) {

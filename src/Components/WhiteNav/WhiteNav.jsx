@@ -100,7 +100,7 @@ const WhiteNav = () => {
               </Link>
             </li>
             <li className="whiteNav-item">
-              <Link to="/#about" className="whiteNav-link">
+              <Link to="/#numbers" className="whiteNav-link">
                 {t("nav_item_3")}
               </Link>
             </li>

@@ -87,7 +87,7 @@
   width: 12px;
   -webkit-appearance: none;
   height: 10px;
-  cursor: ew-resize;
+  cursor: pointer;
   background: #1d454a;
   border-radius: 50%;
   /* background: #434343; */

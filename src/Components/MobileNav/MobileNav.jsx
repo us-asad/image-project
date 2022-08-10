@@ -16,9 +16,16 @@ export default function MobileNav({ showNav, toggleNav }) {
         <ul>
           {nav_items.map((item, i) => (
             <li key={i}>
-              <Link to={item}>
-                {t(`nav_item_${i + 1}`)}
-              </Link>
+              {item.includes("#") ? (
+                <a onClick={() => toggleNav(false)} href={item}>
+                  {t(`nav_item_${i + 1}`)}
+                </a>
+              ) : (
+                <Link onClick={() => toggleNav(false)} to={item}>
+                  {t(`nav_item_${i + 1}`)}
+                </Link>
+              )
+              }
             </li>
           ))}
         </ul>

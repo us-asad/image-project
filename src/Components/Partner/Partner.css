@@ -32,7 +32,6 @@
   display: none;
 }
 .splides-title {
-  width: 384px;
   height: 60px;
   font-family: "Mulish";
   font-style: normal;
@@ -42,7 +41,7 @@
   text-align: center;
   color: #5b8a8d;
   margin: 0 auto;
-  width: 220px;
+  width: 280px;
 }
 .splides-top {
   padding-bottom: 180px;
