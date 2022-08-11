@@ -51,6 +51,6 @@
   "success_text": "Your request has been processed successfully!",
   "error_title": "Oops",
   "error_text": "An error occurred. Please try again later.",
-  "number_input_warning": "It must consist of 9 numbers, for example: 995552233",
+  "number_input_warning": "It must consist of 9 numbers, for example: 998995552233",
   "name_input_warning": "characters must be minimum 5 and maximum 500"
 }

@@ -43,9 +43,9 @@ const Form = () => {
               required
               className="form-input"
               name="phone_number"
-              pattern="[0-9]{9}"
+              pattern="[0-9]{12}"
               title={t("number_input_warning")}
-              maxLength={9}
+              maxLength={12}
               onChange={e => {
                 if (isNaN(+e.target.value)) {
                   e.target.value = e.target.value.slice(-2, 0)

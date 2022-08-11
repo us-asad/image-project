@@ -46,8 +46,8 @@ const Contact = () => {
                 placeholder={t("home_page_contact_number_input")}
                 required
                 name="phone_number"
-                pattern="[0-9]{9}"
-                maxLength={9}
+                pattern="[0-9]{12}"
+                maxLength={12}
                 onChange={e => {
                   if (isNaN(+e.target.value)) {
                     e.target.value = e.target.value.slice(-2, 0)

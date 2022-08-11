@@ -6,7 +6,6 @@
 
 .footer {
   padding: 85px 275px;
-  height: 500px;
   background-color: #feebe2;
   position: relative;
   z-index: 10;
@@ -16,10 +15,9 @@
   max-width: 100%;
   margin: auto;
   width: 930px;
-  height: 357px;
   border: 1px solid #5b8a8d;
   border-radius: 50px;
-  padding: 20px !important;
+  padding: 20px 20px 45px !important;
   padding-top: 60px !important;
 }
 
@@ -233,12 +231,8 @@
 }
 
 @media only screen and (max-width: 720px) {
-  .footer {
-    height: 600px;
-  }
 
   .footer__hero {
-    height: 450px;
     padding-left: 80px;
   }
 
@@ -255,26 +249,24 @@
   .footer__social {
     position: absolute;
     left: 0;
-    transform: translateY(150px) translateX(80%);
+    transform: translateY(83px) translateX(56%);
   }
 
   .footer__hero-bottom {
     justify-content: start;
-    margin-left: 30px;
     margin-top: 160px;
+    padding-left: 22px;
   }
 
   .hero__parent-link {
     position: absolute;
     left: 0;
-    /* margin-right: 300px; */
-    transform: translateY(100%) translateX(20%);
+    transform: translateY(100%) translateX(-2.5%);
   }
 }
 
 @media only screen and (max-width: 434px) {
   .footer__hero {
-    height: 450px;
     padding-left: 40px;
   }
 
@@ -291,29 +283,25 @@
   .footer__social {
     position: absolute;
     left: 0;
-    transform: translateY(102px) translateX(25%);
+    transform: translateY(102px) translateX(75%);
   }
   .footer__hero {
-    height: 450px;
     padding-left: 10px;
   }
 
   .hero__parent-link {
     transform: translateY(100%) translateX(-3%);
   }
-  .footer__hero {
-    height: 361px;
-  }
+
   .footer__bottom-reserv {
     transform: translateY(-190px) translateX(60%);
   }
 
   .hero__parent-link {
-    transform: translateY(69%) translateX(-7%);
+    transform: translateY(69%) translateX(-5%);
   }
   .footer__hero-bottom {
     justify-content: start;
-    margin-left: 19px;
   }
   .footer__communication-link:nth-child(1) .communication__link-text {
     margin-left: 82px;
@@ -324,8 +312,8 @@
   }
   .footer__hero-bottom {
     justify-content: start;
-    margin-left: 26px;
     margin-top: 117px;
+    padding-left: 19px;
   }
   .footer__bottom-reserv {
     transform: translateY(-190px) translateX(60%);
@@ -335,10 +323,9 @@
   .footer__social {
     position: absolute;
     left: 0;
-    transform: translateY(97px) translateX(23%);
+    transform: translateY(97px) translateX(44%);
   }
   .footer {
-    height: 428px;
     padding: 30px 13px;
   }
   .footer__communication-link {
@@ -347,6 +334,12 @@
   .footer__communication-link:nth-child(3) .communication__link-text {
     /* background-color: red;/ */
     font-size: 10px;
+  }
+}
+
+@media (max-width: 401px) {
+  .footer__social {
+    transform: translateY(116px) translateX(37%);
   }
 }
 

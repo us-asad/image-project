@@ -308,3 +308,9 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 450px) {
+  .product-form {
+    padding: 24px 36px;
+  }
+}

@@ -34,6 +34,10 @@
   color: #ffffff;
 }
 
+.product-form .form-input, .product-form .form-btn {
+  max-width: 100%;
+}
+
 .form-btn {
   background: #fff5f1;
   border-radius: 20px;

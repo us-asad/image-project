@@ -94,6 +94,7 @@
 .download-box {
   position: relative;
   cursor: pointer;
+  width: max-content;
 }
 
 .download-btn {

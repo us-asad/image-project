@@ -583,9 +583,6 @@
   .bottom-title {
     display: none;
   }
-  .footer {
-    height: 505px;
-  }
 
   .header-title {
     width: 260px;
@@ -895,9 +892,7 @@ border: 1px solid #FFFFFF; */
   .degree-btn:nth-child(1) .tour-subtext {
     font-size: 9px;
   }
-  .footer {
-    height: 405px;
-  }
+  
   .bottom {
     padding: 40px 0;
   }
@@ -912,10 +907,10 @@ border: 1px solid #FFFFFF; */
     margin-right: 0;
   }
   .communication__link-text {
-    margin-left: 100px;
+    margin-left: 127px;
   }
   .footer__communication-link:nth-child(1) .communication__link-text {
-    margin-left: 109px;
+    margin-left: 137px;
   }
 
   .popup-overlay .menu1 {
