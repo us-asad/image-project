@@ -74,7 +74,7 @@ const About = () => {
           <p className="about-subtext">{t("home_page_about_text_2")}</p>
           <div className="download-box">
             <div className="download-btn">
-              {t("home_page_download")}
+              {t("home_page_about_button_name")}
             </div>
             <div ref={downRef} className="main-btn" data-btn="about">
               <div className="download-blok">

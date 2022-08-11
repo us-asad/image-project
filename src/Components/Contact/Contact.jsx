@@ -47,6 +47,12 @@ const Contact = () => {
                 required
                 name="phone_number"
                 pattern="[0-9]{9}"
+                maxLength={9}
+                onChange={e => {
+                  if (isNaN(+e.target.value)) {
+                    e.target.value = e.target.value.slice(-2, 0)
+                  }
+                }}
                 title={t("number_input_warning")}
               />
               <br />

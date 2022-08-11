@@ -45,6 +45,12 @@ const Form = () => {
               name="phone_number"
               pattern="[0-9]{9}"
               title={t("number_input_warning")}
+              maxLength={9}
+              onChange={e => {
+                if (isNaN(+e.target.value)) {
+                  e.target.value = e.target.value.slice(-2, 0)
+                }
+              }}
             />
             <button className={`form__login-btn form-btn ${loading ? "disabled" : null}`}>
               <span>{t(loading ? "sending" : "home_page_contact_button_name")}{loading ? "..." : null}</span>

@@ -30,7 +30,7 @@ const ProductAboutPage = () => {
     e.preventDefault();
     setLoading(true)
     const message = `Yangi Buyurtma!😊%0A👤Ismi: ${e.target.children.name.value}%0A☎Raqam: ${e.target.children.phone_number.value}%0A🛂Mahsulot Idsi: ${product.id}%0A🏔Rangi: ${selectedColor ? selectedColor.slice(1) : "default"}%0A`;
-    
+
     const ok = await sendMessage(message);
 
     if (ok) {
@@ -169,6 +169,12 @@ const ProductAboutPage = () => {
             name="phone_number"
             pattern="[0-9]{9}"
             title={t("number_input_warning")}
+            maxLength={9}
+            onChange={e => {
+              if (isNaN(+e.target.value)) {
+                e.target.value = e.target.value.slice(-2, 0)
+              }
+            }}
           />
           <button className={`form-btn ${loading ? "disabled" : null}`}>{t("product_page_button_name")}</button>
         </form>
