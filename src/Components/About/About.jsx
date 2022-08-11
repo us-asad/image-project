@@ -37,7 +37,7 @@ const About = () => {
             event.target.setAttribute('data-value', value.toFixed(2));
             clearTimeout(timeout)
 
-            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("74%")) {
+            if (parseFloat(downRef.current?.style.paddingLeft) >= parseFloat("65%")) {
               setDowned(prev => {
                 if (!prev) {
                   aRef.current.click();
