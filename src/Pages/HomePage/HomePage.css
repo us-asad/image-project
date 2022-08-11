@@ -3,7 +3,7 @@
 }
 
 .about-title {
-  text-align: center;
+  text-align: start;
 }
 
 @media (max-width: 1450px) {
@@ -268,6 +268,10 @@
 @media (max-width: 820px) {
   .container {
     width: 700px;
+  }
+
+  .about-title {
+    text-align: center;
   }
 
   .header-title {
