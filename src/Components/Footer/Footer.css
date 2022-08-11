@@ -339,7 +339,7 @@
 
 @media (max-width: 401px) {
   .footer__social {
-    transform: translateY(116px) translateX(37%);
+    transform: translateY(116px) translateX(44%);
   }
 }
 
