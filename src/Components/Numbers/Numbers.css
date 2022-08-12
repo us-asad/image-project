@@ -60,8 +60,7 @@
 }
 .numbers {
   background-color: #fbf4ef;
-  background-image: url("../../Assets/Img/Rectangle49.png"),
-    url("../../Assets/Img/bg1.png");
+  background-image: url("../../Assets/Img/bg1.png");
   background-repeat: no-repeat;
   background-size: 139px 211px, 550px 700px;
   position: relative;
