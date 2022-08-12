@@ -10,7 +10,7 @@ import i18next from "i18next";
 import { AiFillStar } from "react-icons/ai";
 import { useSendMessageToTg } from "../../hooks/useSendMessageToTg";
 
-const ProductAboutPage = () => {
+const ProductAboutPage = ({ productPage }) => {
   const [data, setData] = useState([]);
   const [product, setProduct] = useState({});
   const [openModal, setOpenModal] = useState(false);
@@ -49,7 +49,7 @@ const ProductAboutPage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://api-baf.abba.uz/products/${params.id}/?format=json`)
+    fetch(`https://api-baf.abba.uz/${productPage ? "products" : "services"}/${params.id}/?format=json`)
       .then((res) => res.json())
       .then((prd) => {
         setProduct(prd);

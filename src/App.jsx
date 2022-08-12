@@ -30,7 +30,6 @@ i18n
   });
 
 function App() {
-  const { t, i18n } = useTranslation();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
