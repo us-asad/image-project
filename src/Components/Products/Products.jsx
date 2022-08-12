@@ -33,16 +33,12 @@ const Products = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (getPrds) {
-      fetch(`https://api-baf.abba.uz/categories/?format=json`)
-        .then((res) => res.json())
-        .then((data) => setData(data));
-    } else {
-      fetch(`https://api-baf.abba.uz/service_category/?format=json`)
-        .then((res) => res.json())
-        .then((data) => setData(data));
-    }
+    fetch(`https://api-baf.abba.uz/${getPrds ? "categories" : "services"}/?format=json`)
+      .then((res) => res.json())
+      .then((data) => setData(data));
   }, [getPrds]);
+
+  console.log(data)
 
 
   return (
@@ -93,9 +89,9 @@ const Products = () => {
               {
                 [...data, ...data].map((e, i) => (
                   <SplideSlide key={i}>
-                    <Link to={`/${getPrds ? "category" : "services"}/${e.id}`} >
-                      <div className="splide-header splide-bg-item" style={{background: i % 2 ? "#ffebe2" : "#e2e9e7"}}>
-                        <img src={e.image} alt="" className="splide-img" />
+                    <Link to={`/${getPrds ? "category" : "service"}/${e.id}`} >
+                      <div className="splide-header splide-bg-item" style={{ background: i % 2 ? "#ffebe2" : "#e2e9e7" }}>
+                        <img src={e[getPrds ? "image" : "image1"]} alt="" className="splide-img" />
                       </div>
                       <h2 className="splide-title">
                         {e[`name_${i18next.language}`]} </h2>
