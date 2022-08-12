@@ -36,20 +36,18 @@
   display: none;
 }
 .splides-title {
-  height: 60px;
   font-family: "Mulish";
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
-  line-height: 48px;
   text-align: center;
   color: #5b8a8d;
   margin: 0 auto;
   width: 280px;
+  margin-bottom: 40px;
 }
 .splides-top {
-  padding-bottom: 180px;
-  padding-top: 80px;
+  padding: 64px 0 20px;
 }
 
 .splides {

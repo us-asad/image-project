@@ -1,5 +1,6 @@
 import "./Numbers.css"
 import leftImg from "../../Assets/Img/number1.png"
+import mainBg from "../../Assets/Img/aboutBg1.png";
 import { useRef, useState } from "react"
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -79,6 +80,7 @@ const Numbers = () => {
           </div>
         </div>
       </div>
+      <img src={mainBg} alt="Main bg" className="numbers-bg" />
     </section>
   )
 }

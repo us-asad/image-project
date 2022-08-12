@@ -79,7 +79,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(0%, -25.8%);
+  transform: translate(10%, -25.8%);
 
   filter: drop-shadow(-14px -8px 71px rgb(233, 229, 229));
 }

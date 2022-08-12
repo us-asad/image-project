@@ -43,7 +43,6 @@ const Form = () => {
               required
               className="form-input"
               name="phone_number"
-              pattern="[0-9]{12}"
               title={t("number_input_warning")}
               maxLength={12}
               onChange={e => {

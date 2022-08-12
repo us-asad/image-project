@@ -46,7 +46,6 @@ const Contact = () => {
                 placeholder={t("home_page_contact_number_input")}
                 required
                 name="phone_number"
-                pattern="[0-9]{12}"
                 maxLength={12}
                 onChange={e => {
                   if (isNaN(+e.target.value)) {
@@ -62,7 +61,7 @@ const Contact = () => {
             </form>
           </div>
           <div className="quesion__carpet">
-            <img className="carpet__images" src={carpet} style={{ opacity: ".7" }} alt="carpet" width="763" height="543" />
+            <img className="carpet__images" src={carpet} alt="carpet" width="763" height="543" />
           </div>
         </div>
       </div>
