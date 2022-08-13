@@ -24,7 +24,7 @@ const Numbers = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // setActiveNumIdx(prev => prev + 2 > data.length ? 0 : prev + 1);
+      setActiveNumIdx(prev => prev + 2 > data.length ? 0 : prev + 1);
     }, 5000);
 
     return () => {

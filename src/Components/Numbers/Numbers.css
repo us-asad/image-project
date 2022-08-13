@@ -149,10 +149,9 @@
 
 .numbers-bg {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 205px;
+  left: 42.4%;
   width: 150px;
-  transform: translate(-90%, -50%);
   opacity: .7;
 }
 
