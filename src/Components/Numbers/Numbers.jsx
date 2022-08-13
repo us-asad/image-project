@@ -57,7 +57,7 @@ const Numbers = () => {
                 className={`numbers-item ${i === activeNumIdx ? "" : i - 1 === activeNumIdx || i + 1 === activeNumIdx ? "numbers-closer" : "numbers-disactive"}`}
                 onClick={() => setActiveNumIdx(i)}
               >
-                <p className="numbers-num">
+                <p className={`numbers-num ${i === activeNumIdx ? "link-underline" : ""}`}>
                   {item.number}
                 </p>
               </li>

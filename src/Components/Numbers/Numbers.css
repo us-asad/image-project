@@ -40,13 +40,17 @@
   transition: all .3s;
 }
 
+.numbers-item.active {
+  border-bottom: 2px solid red;
+}
+
 .numbers-num {
   font-style: normal;
   font-weight: 400;
   font-size: 72px;
-  line-height: 86px;
+  line-height: 80px;
   text-transform: uppercase;
-  padding: 80px 0;
+  margin: 80px 0;
   color: #5e8d8f;
 }
 .numbers-medium {
