@@ -35,7 +35,7 @@ const Contact = () => {
                 placeholder={t("home_page_contact_name_input")}
                 required
                 name="name"
-                minLength={5}
+                minLength={3}
                 maxLength={500}
                 title={t("name_input_warning")}
               />

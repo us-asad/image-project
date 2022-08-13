@@ -33,7 +33,7 @@ const Form = () => {
               required
               className="form-input"
               name="name"
-              minLength={5}
+              minLength={3}
               maxLength={500}
               title={t("name_input_warning")}
             />
