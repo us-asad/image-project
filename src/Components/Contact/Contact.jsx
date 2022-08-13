@@ -2,7 +2,7 @@ import "./Contact.css"
 import carpet from "../../Assets/Img/carpet.png"
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { getContactMessage, submitMessage } from "../../data";
+import { getContactMessage } from "../../data";
 import { useSendMessageToTg } from "../../hooks/useSendMessageToTg";
 
 const Contact = () => {
@@ -61,7 +61,7 @@ const Contact = () => {
             </form>
           </div>
           <div className="quesion__carpet">
-            <img className="carpet__images" src={carpet} alt="carpet" width="763" height="543" />
+            <img className="carpet__images" src={carpet} alt="carpet" />
           </div>
         </div>
       </div>
